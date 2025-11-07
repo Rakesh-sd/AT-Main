@@ -5,7 +5,6 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 const fs = require("fs");
-const puppeteer = require("puppeteer");
 const { google } = require("googleapis");
 
 const app = express();
