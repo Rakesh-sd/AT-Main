@@ -1,13 +1,16 @@
 var createError = require("http-errors");
-const express = require("express");
+var express = require("express");
+const express = require('express');
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
+
 const fs = require("fs");
 const { google } = require("googleapis");
 
-const app = express();
+var app = express();
+var cookieParser = require("cookie-parser");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
