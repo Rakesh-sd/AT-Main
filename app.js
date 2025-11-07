@@ -1,16 +1,13 @@
 var createError = require("http-errors");
 var express = require("express");
-const express = require('express');
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
-
 const fs = require("fs");
 const { google } = require("googleapis");
 
 var app = express();
-var cookieParser = require("cookie-parser");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -23,27 +20,27 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
+app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 // routes
 app.get("/", (req, res) => {
-  res.render("pages/home.ejs");
+  res.render("pages/home");
 });
 
 app.get("/aboutus", (req, res) => {
-  res.render("pages/aboutus.ejs");
+  res.render("pages/aboutus");
 });
 
 app.get("/inner", (req, res) => {
-  res.render("pages/inner.ejs");
+  res.render("pages/inner");
 });
 
 app.get("/inner2", (req, res) => {
-  res.render("pages/inner2.ejs");
+  res.render("pages/inner2");
 });
 
 app.get("/sample", (req, res) => {
-  res.render("pages/sample.ejs");
+  res.render("pages/sample");
 });
 
 // error handling
@@ -60,5 +57,5 @@ app.use(function (err, req, res, next) {
 
 // start server
 app.listen(3000, () => {
-  console.log("running on 3000");
+  console.log("Server running on port 3000 🚀");
 });
