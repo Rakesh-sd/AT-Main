@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development Program | Skill Dunia</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Poppins', sans-serif; line-height:1.6; color:#333; overflow-x:hidden; }
+
+  :root {
+    --primary: #49007F;
+    --accent: #FFAA00;
+    --light: #F7F9FC;
+    --secondary: #3F6DFF;
+    --bg-syllabus: #f0f7ff;
+    --bg-plans: #fff8e7;
+    --bg-faq: #f9f9f9;
+    --bg-cta: #0F1F4F;
+  }
+
+  a { text-decoration:none; color:inherit; }
+  img { max-width:100%; display:block; }
+
+  /* ---------- FADE-IN ---------- */
+  /* .fade-in { opacity:0; transform:translateY(20px); transition: all 0.8s ease-out; }
+  .fade-in.show { opacity:1; transform:translateY(0); } */
+
+  /* ---------- HERO ---------- */
+  header.hero { background:#fff; color:var(--primary); text-align:center; padding:100px 20px 80px; }
+  header.hero h1 { font-size:2.8rem; margin-bottom:1rem; }
+  header.hero p { font-size:1.2rem; opacity:0.9; max-width:700px; margin:0 auto; }
+
+  /* ---------- CONTAINERS ---------- */
+  .container { max-width:1100px; margin:0 auto; padding:60px 20px; }
+
+  /* ---------- STATS ---------- */
+  .stats-section { background:var(--primary); }
+  .stats { display:flex; justify-content:space-around; gap:20px; flex-wrap:wrap; text-align:center; }
+  .stats .item { background:#fff; color:var(--primary); border-radius:10px; padding:30px 20px; flex:1 1 250px; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+  .stats .item:hover { transform:translateY(-8px); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+  .stats h2 { color:var(--accent); font-size:2rem; }
+  .stats p { font-weight:500; margin-top:5px; }
+
+  /* ---------- SYLLABUS ---------- */
+  .syllabus-section { background:#fff; }
+  .syllabus-section h2 { text-align:center; color:var(--primary); margin-bottom:30px; }
+  .syllabus-item { background:var(--light); border-radius:8px; margin-bottom:15px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+  .syllabus-header { padding:20px; cursor:pointer; font-weight:600; color:var(--primary); position:relative; }
+  .syllabus-header::after { content:'+'; position:absolute; right:20px; font-weight:bold; color:var(--accent); font-size:1.5rem; transition:transform 0.3s ease; }
+  .syllabus-item.active .syllabus-header::after { content:'−'; transform:rotate(180deg); }
+  .syllabus-content { max-height:0; overflow:hidden; background:white; transition:max-height 0.5s ease; padding:0 20px; }
+  .syllabus-content ul { list-style:disc; padding:15px 0 15px 20px; color:#555; }
+
+  /* ---------- PLANS ---------- */
+  .plans-section { background: var(--primary); }
+  .plans h2 { text-align:center; color:var(--primary); margin-bottom:40px; }
+  .plan-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+  .plan { border:1px solid #eee; border-radius:12px; padding:30px 20px; text-align:center; transition: all 0.3s ease; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+  .plan:hover { transform:translateY(-6px); border-color:var(--accent); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+  .plan h3 { color:#fff; margin-bottom:10px; }
+  .plan .price { font-size:2rem; color:var(--accent); margin:10px 0; }
+  .plan button { background:var(--accent); color:#fff; border:none; padding:12px 25px; border-radius:5px; cursor:pointer; font-weight:600; transition:0.3s; }
+  .plan button:hover { background:#e89a00; }
+
+  /* ---------- FAQ ---------- */
+  .faq-section { background: var(--bg-faq); color:var(--primary);}
+  .faq h2 { text-align:center; color:var(--primary); margin-bottom:30px; }
+  .faq-item { background:var(--light); border-radius:8px; margin-bottom:15px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+  .faq-question { padding:20px; cursor:pointer; font-weight:600; position:relative; color:var(--primary); }
+  .faq-question::after { content:'+'; position:absolute; right:20px; font-size:1.5rem; color:var(--accent); transition: transform 0.3s ease; }
+  .faq-item.active .faq-question::after { content:'−'; transform:rotate(180deg); }
+  .faq-answer { max-height:0; overflow:hidden; padding:0 20px; transition:max-height 0.5s ease; background:white; }
+  .faq-answer p { padding:15px 0; }
+
+  /* ---------- CTA ---------- */
+  .cta { background:var(--primary); color:white; text-align:center; padding:70px 20px; }
+  .cta button { background:var(--accent); border:none; color:#fff; padding:15px 30px; font-size:1rem; border-radius:6px; cursor:pointer; transition:0.3s; }
+  .cta button:hover { background:#e89a00; }
+
+  @media(max-width:768px){ header.hero{padding:60px 15px} header.hero h1{font-size:2rem} }
+</style>
+</head>
+<body>
+    <%- include('../components/navbar') %>
+
+  <!-- HERO -->
+  <header class="hero fade-in">
+    <h1>Full Stack Web Development Program</h1>
+    <p>Master HTML, CSS, JavaScript, React, and more — build real-world projects and become job-ready.</p>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats-section fade-in">
+    <div class="container stats">
+      <div class="item fade-in"> <h2>25K+</h2> <p>Job Openings</p> </div>
+      <div class="item fade-in"> <h2>₹12 LPA</h2> <p>Average Salary</p> </div>
+      <div class="item fade-in"> <h2>$123 B+</h2> <p>Global Market</p> </div>
+    </div>
+  </section>
+
+  <!-- SYLLABUS -->
+  <section class="syllabus-section fade-in">
+    <div class="container">
+      <h2>Program Syllabus</h2>
+      <div class="syllabus-item fade-in">
+        <div class="syllabus-header">1. Introduction to Web Development</div>
+        <div class="syllabus-content">
+          <ul><li>Web Fundamentals</li><li>Developer Tools Overview</li><li>Command Line Basics</li></ul>
+        </div>
+      </div>
+      <div class="syllabus-item fade-in">
+        <div class="syllabus-header">2. HTML & CSS</div>
+        <div class="syllabus-content">
+          <ul><li>HTML Structure and Elements</li><li>Forms and Tables</li><li>CSS Selectors & Flexbox</li><li>Responsive Design</li></ul>
+        </div>
+      </div>
+      <div class="syllabus-item fade-in">
+        <div class="syllabus-header">3. JavaScript Essentials</div>
+        <div class="syllabus-content">
+          <ul><li>Variables and Data Types</li><li>Functions and Loops</li><li>DOM Manipulation</li><li>ES6 Features</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="plans-section fade-in">
+    <div class="container">
+      <h2>Choose Your Plan</h2>
+      <div class="plan-cards">
+        <div class="plan fade-in"><h3>Starter</h3><p>Self-paced learning</p><div class="price">₹4,999</div><button>Enroll Now</button></div>
+        <div class="plan fade-in"><h3>Pro</h3><p>Live mentor support</p><div class="price">₹8,999</div><button>Enroll Now</button></div>
+        <div class="plan fade-in"><h3>Career Edge</h3><p>Job-ready training</p><div class="price">₹11,999</div><button>Enroll Now</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section fade-in">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item fade-in"><div class="faq-question">Do I need prior coding knowledge?</div><div class="faq-answer"><p>No, starts from scratch.</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-question">Is this course online?</div><div class="faq-answer"><p>Fully online, self-paced or live.</p></div></div>
+      <div class="faq-item fade-in"><div class="faq-question">Will I get a certificate?</div><div class="faq-answer"><p>Yes, verified certificate included.</p></div></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta fade-in">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Join the Web Development Program today and build a successful career in tech.</p>
+    <button>Apply Now</button>
+  </section>
+
+        <%- include('../components/footer') %>
+
+<script>
+  // Accordion for syllabus
+  document.querySelectorAll('.syllabus-header').forEach(h=>{
+    h.addEventListener('click',()=>{
+      const parent=h.parentElement, content=parent.querySelector('.syllabus-content');
+      if(parent.classList.contains('active')){ content.style.maxHeight=null; parent.classList.remove('active'); }
+      else{ document.querySelectorAll('.syllabus-item').forEach(i=>{i.classList.remove('active'); i.querySelector('.syllabus-content').style.maxHeight=null;}); parent.classList.add('active'); content.style.maxHeight=content.scrollHeight+"px"; }
+    });
+  });
+
+  // Accordion for FAQ
+  document.querySelectorAll('.faq-question').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const parent=q.parentElement, ans=parent.querySelector('.faq-answer');
+      if(parent.classList.contains('active')){ ans.style.maxHeight=null; parent.classList.remove('active'); }
+      else{ document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight=null;}); parent.classList.add('active'); ans.style.maxHeight=ans.scrollHeight+"px"; }
+    });
+  });
+
+  // Fade-in on scroll with staggered delay
+  // const faders = document.querySelectorAll('.fade-in');
+  // const appearOptions = { threshold:0.2, rootMargin:"0px 0px -50px 0px" };
+  // const appearOnScroll = new IntersectionObserver((entries, observer)=>{
+  //   entries.forEach(entry=>{
+  //     if(entry.isIntersecting){
+  //       // stagger effect
+  //       entry.target.style.transitionDelay = (Array.from(faders).indexOf(entry.target)*0.15) + "s";
+  //       entry.target.classList.add('show'); 
+  //       observer.unobserve(entry.target);
+  //     }
+  //   });
+  // }, appearOptions);
+  // faders.forEach(fader=>appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>

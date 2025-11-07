@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aptus Technologies — Sticky Scroll Navbar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --violet: #49007F;
+      --border: rgba(0,0,0,.1);
+    }
+
+    /* * { box-sizing: border-box; margin: 0; padding: 0; } */
+    body { font-family: Inter, sans-serif; height: 200vh; }
+
+    /* ===== Navbar ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--violet);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 7px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding 0.3s ease;
+    }
+
+    /* ===== Logo ===== */
+    .nav-logo img {
+      height: 3rem;
+      transition: all 0.4s ease, filter 0.4s ease;
+      filter: brightness(0) invert(1); /* white on violet */
+      width:10rem
+    }
+
+    /* ===== Desktop Menu ===== */
+    .nav-links-desktop {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links-desktop li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color .2s ease;
+    }
+    .nav-links-desktop li a:hover { color: #cbb2e7; }
+
+    .nav-actions-desktop {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .nav-actions-desktop a.button {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+    .button-outline {
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    .button-solid {
+      background: #fff;
+      color: var(--violet);
+    }
+
+    /* ===== Sticky (Scrolled) Navbar ===== */
+    nav.sticky {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav.sticky .nav-links-desktop li a {
+      color: var(--violet);
+    }
+    nav.sticky .nav-actions-desktop .button-outline {
+      border-color: var(--violet);
+      color: var(--violet);
+    }
+    nav.sticky .nav-actions-desktop .button-solid {
+      background: var(--violet);
+      color: #fff;
+    }
+    nav.sticky .nav-logo img {
+      filter: brightness(1) saturate(100%) invert(0); /* violet logo */
+    }
+
+    /* ===== Mobile Styles ===== */
+    .menu-toggle {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      background: #fff;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mobile-menu a {
+      text-decoration: none;
+      color: rgba(10, 13, 30, 0.9);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .mobile-menu .nav-actions-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mobile-menu .nav-actions-mobile a.button {
+      width: 100%;
+      text-align: center;
+    }
+
+    @media(max-width: 768px){
+      .nav-links-desktop, .nav-actions-desktop { display: none; }
+      .menu-toggle { display: block; }
+      .nav-logo img { height: 3.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="mainNav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <!-- Single logo file (use violet color); CSS handles white effect -->
+        <img id="navLogo" src="../../assets/logo/logo-v-hori.png" alt="Aptus Technologies Logo">
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="nav-links-desktop">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+
+      <div class="nav-actions-desktop">
+        <a href="#" class="button button-outline">Login</a>
+        <a href="#" class="button button-solid">Sign Up</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+      <div class="nav-actions-mobile">
+        <a href="#" class="button button-outline">Login</a>
+        <a href="#" class="button button-solid">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const nav = document.getElementById('mainNav');
+
+    toggleBtn.addEventListener('click', () => {
+      if (mobileMenu.style.display === 'flex') {
+        mobileMenu.style.display = 'none';
+        toggleBtn.textContent = '☰';
+      } else {
+        mobileMenu.style.display = 'flex';
+        toggleBtn.textContent = '✕';
+      }
+    });
+
+    // Sticky navbar color & logo effect
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('sticky');
+        toggleBtn.style.color = "var(--violet)";
+      } else {
+        nav.classList.remove('sticky');
+        toggleBtn.style.color = "#fff";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Section - Colorlib Education Style</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
+
+    <style>
+        /* Reset & base setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hero section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('../../assets/home/banner-bg.jpg.webp') center center / cover no-repeat;
+            background-attachment: fixed;
+            /* <-- This line makes it fixed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+
+        .hero-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-buttons {
+            display: inline-flex;
+            gap: 15px;
+        }
+
+        .hero-buttons .btn {
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            background-color: transparent;
+        }
+
+        .btn-primary {
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4c4c;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Scroll down arrow */
+        .scroll-down {
+            display: block;
+            margin: 40px auto 0;
+            font-size: 2rem;
+            color: #ffffff;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(10px);
+            }
+
+            60% {
+                transform: translateY(5px);
+            }
+        }
+
+        /* @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+            }
+        } */
+
+
+        /* Cards section */
+        .cards-section {
+            width: 100%;
+            background-color: #49007F;
+            padding: 60px 0;
+        }
+
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            color: #fff;
+            font-weight: 600;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .card-body a {
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #222;
+            text-decoration: none;
+        }
+
+        .card-body a:hover {
+            color: #f15f79;
+        }
+
+        /* About section */
+        .about-section {
+            padding: 60px 10%;
+            background-color: #fff;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .sub-title {
+            color: #001428;
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .sub-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #001428;
+            bottom: -6px;
+            left: 0;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #001428;
+        }
+
+        .main-title span {
+            color: #49007F;
+        }
+
+        .about-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #49007F;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        .feature-list li::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #7B2CBF;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #49007F;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #49007F;
+            border: 2px solid #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.125rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .features {
+                gap: 30px;
+            }
+        }
+
+        /* Certification Section */
+        .certification-section {
+            position: relative;
+            margin: 0 auto;
+            padding: 80px 20px;
+            color: #fff;
+            background: url('../../assets/home/banner-bg.jpg.webp') center center / cover no-repeat;
+            background-attachment: fixed;
+            /* 💡 makes the background image fixed */
+            overflow: hidden;
+        }
+
+        /* optional overlay for better contrast */
+        .certification-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: rgba(73, 0, 127, 0.85); */
+            z-index: 0;
+        }
+
+        .certification-header,
+        .cert-cards-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .certification-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .certification-header h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .cert-btn {
+            padding: 12px 25px;
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            color: #49007F;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cert-btn:hover {
+            background-color: #49007F;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cert-cards-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #49007F, #8d49c2 90%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .cert-card-content {
+            padding: 20px;
+        }
+
+        .cert-card-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .cert-card-content p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #ccc;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        @media(max-width: 1024px) {
+            .cert-cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .certification-header h2 {
+                font-size: 2rem;
+            }
+
+            .cert-cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Career Guidance Section */
+        .career {
+            width: 100%;
+            background-color: #49007F;
+            /* full red background */
+            padding: 60px 5%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .career-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1200px;
+        }
+
+        .career-content {
+            flex: 1 1 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 500px;
+        }
+
+        .career-content h5 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .career-content h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .career-content p {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        /* Form Styling */
+        .career-form {
+            flex: 1 1 370px;
+            background: #fff;
+            /* keeps form contrasting */
+            box-shadow: 0 4px 24px rgb(0 0 0 / 7%);
+            border-radius: 15px;
+            padding: 35px 40px;
+            display: flex;
+            flex-direction: column;
+            min-width: 350px;
+            min-height: 400px;
+        }
+
+        .career-form label {
+            font-weight: 600;
+            margin: 12px 0 6px 0;
+        }
+
+        .career-form input,
+        .career-form textarea {
+            width: 100%;
+            padding: 12px 18px;
+            font-size: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 11px;
+            margin-bottom: 8px;
+            background: #fafafa;
+            color: #222;
+            outline: none;
+            resize: none;
+            transition: border 0.2s;
+        }
+
+        .career-form input:focus,
+        .career-form textarea:focus {
+            border-color: #49007F;
+        }
+
+        .career-form textarea {
+            min-height: 80px;
+            max-height: 150px;
+        }
+
+        .career-form button {
+            width: 100%;
+            margin-top: 17px;
+            padding: 18px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: #49007F;
+            color: #fff;
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .career-form button:hover {
+            background: #fff;
+            color: #49007F;
+            border: 2px solid #49007F;
+        }
+
+        .career-form .success-msg {
+            color: red;
+            font-weight: 600;
+            margin-top: 16px;
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 950px) {
+            .career-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .career-content,
+            .career-form {
+                max-width: 100%;
+                min-width: unset;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .career {
+                padding: 25px 4%;
+            }
+
+            .career-form {
+                padding: 20px 10px;
+                border-radius: 12px;
+            }
+
+            .career-content h1 {
+                font-size: 2rem;
+            }
+        }
+
+
+
+        /* Timeline */
+        .timeline-section {
+            padding: 48px 5vw 60px 5vw;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #49007F;
+        }
+
+        .timeline-section p.headline {
+            text-align: center;
+            color: #49007F;
+            font-size: 1.01rem;
+            margin-bottom: 50px;
+            margin-top: 7px;
+            font-weight: 400;
+        }
+
+        .timeline {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            top: 25px;
+            bottom: 25px;
+            background: #49007F;
+            z-index: 0;
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 130px;
+            margin: 0 0 25px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            background: #49007F;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 10px #0b3ae422;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+        }
+
+        .timeline-content {
+            width: 330px;
+            background: linear-gradient(135deg, #49007F, #8d49c2 90%);
+            color: #fff;
+            padding: 25px 26px 18px 26px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px #0679f730;
+            font-size: 1rem;
+            opacity: 0;
+            transform: translateY(40px) scale(0.96);
+            filter: blur(7px);
+            transition: opacity 0.8s cubic-bezier(.19, 1, .22, 1),
+                transform 0.8s cubic-bezier(.19, 1, .22, 1),
+                filter 0.8s cubic-bezier(.19, 1, .22, 1);
+        }
+
+        .timeline-content.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+            pointer-events: all;
+            transition: opacity 1.1s cubic-bezier(.19, 1, .22, 1),
+                transform 1s cubic-bezier(.19, 1, .22, 1),
+                filter 1s cubic-bezier(.19, 1, .22, 1);
+        }
+
+        .timeline-content h4 {
+            margin: 0 0 6px 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        /* Left and right alternating */
+        .timeline-step.left .timeline-content {
+            margin-right: 30rem;
+            margin-left: 0;
+            text-align: right;
+        }
+
+        .timeline-step.right .timeline-content {
+            margin-left: 30rem;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        @media (max-width: 800px) {
+            .timeline-section {
+                padding: 30px 0 40px 0;
+            }
+
+            .timeline-content,
+            .timeline-step.left .timeline-content,
+            .timeline-step.right .timeline-content {
+                margin: 0;
+                text-align: left;
+                width: 95vw;
+                max-width: 370px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .timeline-section h2 {
+                font-size: 1.35rem;
+                padding: 0 7px;
+            }
+
+            .timeline-content {
+                width: 90vw;
+                max-width: 95vw;
+                padding: 17px 8px 12px 12px;
+                font-size: 15px;
+            }
+
+            .timeline-line {
+                left: 18px;
+                transform: unset;
+            }
+
+            .timeline-dot {
+                left: 18px;
+                margin-left: 0;
+            }
+
+            .timeline-step.left .timeline-content,
+            .timeline-step.right .timeline-content {
+                margin: 0 0 0 34px;
+            }
+
+            .timeline-step {
+                min-height: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('../components/navbar') %>
+
+        <!-- Hero -->
+        <header class="hero-section">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>Your Bright Future Begins Here</h1>
+                <p>Join thousands of learners from around the world across a wide range of courses and programs.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-secondary">Explore Courses</a>
+                </div>
+                <a href="#cards-section" class="scroll-down">↓</a>
+            </div>
+        </header>
+
+        <!-- Cards Section -->
+        <section id="cards-section" class="cards-section">
+            <div class="cards-container">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-header" style="background: linear-gradient(90deg,#e96443,#904e95);">
+                        Learn Online Courses
+                    </div>
+                    <div class="card-body">
+                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology.</p>
+                        <a href="#">Join Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-header" style="background: linear-gradient(90deg,#4776e6,#8e54e9);">
+                        No.1 of Universities
+                    </div>
+                    <div class="card-body">
+                        <p>For many of us, our first experience of learning about the celestial bodies begins here.</p>
+                        <a href="#">Join Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-header" style="background: linear-gradient(90deg,#43cea2,#185a9d);">
+                        Huge Library
+                    </div>
+                    <div class="card-body">
+                        <p>If you are a serious astronomy fanatic like a lot of us are, you can probably remember that
+                            one
+                            event.</p>
+                        <a href="#">Join Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-header" style="background: linear-gradient(90deg,#f7971e,#ffd200);">
+                        Expert Teachers
+                    </div>
+                    <div class="card-body">
+                        <p>Our expert faculty provide quality education that inspires, motivates, and prepares students
+                            for success.</p>
+                        <a href="#">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Books">
+                </div>
+
+                <div class="about-content">
+                    <h5 class="sub-title">ABOUT US</h5>
+                    <h2 class="main-title">Welcome to <span>NewName</span></h2>
+                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
+                        erat ipsum et lorem et sit.</p>
+                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
+                        erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet.</p>
+
+                    <div class="features">
+                        <ul class="feature-list">
+                            <li>Skilled Instructors</li>
+                            <li>International Certificate</li>
+                            <li>Online Classes</li>
+                        </ul>
+
+                        <ul class="feature-list">
+                            <li>Online Classes</li>
+                            <li>Skilled Instructors</li>
+                            <li>International Certificate</li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certification Section -->
+        <section class="certification-section">
+            <div class="certification-header">
+                <h2>Departments<br>Certification Program</h2>
+                <button class="cert-btn">Read More</button>
+            </div>
+
+            <div class="cert-cards-container">
+                <!-- Cert Cards -->
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Management Non IT">
+                    <div class="cert-card-content">
+                        <h3>Management - Non IT</h3>
+                        <p>Empowering Non-IT Professionals with Essential Management and Leadership Skills.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Electronics">
+                    <div class="cert-card-content">
+                        <h3>Electronics and Communications</h3>
+                        <p>Empowering Innovation in Electronics & Communication Engineering.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Aeronautical">
+                    <div class="cert-card-content">
+                        <h3>Aeronautical Engineering</h3>
+                        <p>Innovate in Aeronautics: Hands-On Learning and Skill Development.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Mechanical Civil">
+                    <div class="cert-card-content">
+                        <h3>Mechanical - Civil</h3>
+                        <p>Shape Tomorrow with Hands-On Mechanical and Civil Engineering Programs.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Biotechnology">
+                    <div class="cert-card-content">
+                        <h3>Biotechnology</h3>
+                        <p>Explore the Frontiers of Life Science with Our Biotechnology Programs.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Computer Science">
+                    <div class="cert-card-content">
+                        <h3>Computer Science & IT Programs</h3>
+                        <p>Master the Digital Landscape with Cutting-Edge CS & IT Programs.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Healthcare">
+                    <div class="cert-card-content">
+                        <h3>Healthcare & Science Learning</h3>
+                        <p>Empowering Future Leaders in Medicine and Science.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <h2>Your Path to a Tech Career</h2>
+            <p class="headline">A simple, proven 4-step journey from learning the fundamentals to launching your new
+                career.</p>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-step left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Enroll & Master the Skills</h4>
+                        <span>Begin your journey with our expert-led curriculum, focusing on in-demand technologies and
+                            hands-on learning from day one.</span>
+                    </div>
+                </div>
+
+                <div class="timeline-step right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Build Your Project Portfolio</h4>
+                        <span>Apply your skills by building a portfolio of impressive, real-world projects that solve
+                            actual problems and showcase your abilities.</span>
+                    </div>
+                </div>
+
+                <div class="timeline-step left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Get Interview-Ready</h4>
+                        <span>Work with our dedicated placement cell on resume building, mock interviews, and soft
+                            skills training to build your confidence.</span>
+                    </div>
+                </div>
+
+                <div class="timeline-step right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Launch Your Career</h4>
+                        <span>Get connected with our extensive network of hiring partners and start attending interviews
+                            for top roles in the tech industry.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Guidance Section -->
+        <section class="career">
+            <div class="career-container">
+                <!-- Text Content -->
+                <div class="career-content">
+                    <h5>Career Guidance</h5>
+                    <h1>Get expert counselling now</h1>
+                    <p>Fill the form and our team will get in touch</p>
+                </div>
+
+                <!-- Form -->
+                <form class="career-form" id="guidanceForm" onsubmit="return handleSubmit(event)">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required />
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required />
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+
+                    <button type="submit">Send</button>
+                    <div class="success-msg" id="successMsg">Your message has been sent!</div>
+                </form>
+            </div>
+        </section>
+
+
+
+        <%- include('../components/footer') %>
+
+            <script>
+                document.querySelector('.scroll-down').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.getElementById('cards-section');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+
+                // Optional animation or interaction
+                document.querySelector('.btn').addEventListener('click', () => {
+                    alert('More details coming soon!');
+                });
+
+                // Reveal timeline steps as they enter the viewport
+                document.addEventListener('DOMContentLoaded', () => {
+                    const elements = document.querySelectorAll('.timeline-content');
+                    const observer = new IntersectionObserver(
+                        entries => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('visible');
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        }, { threshold: 0.25 }
+                    );
+                    elements.forEach(el => observer.observe(el));
+                });
+            </script>
+</body>
+
+</html>
