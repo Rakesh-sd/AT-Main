@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Categories</title>
+    <meta name="description" content="A clean, responsive categories page built with only HTML, CSS, and vanilla JS." />
+    <link rel="icon" type="image/x-icon" href="../../assests/home-page/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b1020;
+            --panel: #111735;
+            --panel-2: #0e142c;
+            --muted: #c7c9d4;
+            --text: #eef0f6;
+            --brand: #6ea8fe;
+            --brand-2: #9b86ff;
+            --chip: #1a2147;
+            --border: #1c234a;
+            --success: #3ddc97;
+            --warning: #ffd166;
+            --danger: #ff6b6b;
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 1px 0 rgba(255, 255, 255, .03) inset;
+            --radius-xl: 18px;
+            --radius-lg: 14px;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background: radial-gradient(1200px 800px at 10% -10%, #49007F 0%, transparent 60%),
+                radial-gradient(1000px 600px at 90% -10%, #2c1f66 0%, transparent 60%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* ======= Topbar / Header ======= */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background: linear-gradient(180deg, rgba(10, 13, 30, .85), rgba(10, 13, 30, .65));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .container {
+            width: min(1200px, 92vw);
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            box-shadow: var(--shadow);
+        }
+
+        .brand span {
+            font-size: 18px;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn {
+            appearance: none;
+            border: 1px solid var(--border);
+            color: var(--text);
+            background: linear-gradient(180deg, var(--panel), var(--panel-2));
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            border-color: #2a3270;
+        }
+
+        .btn.primary {
+            border-color: transparent;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            color: #0a0d1e;
+        }
+
+        /* ======= Page Header ======= */
+        .pagehead {
+            padding: 28px 0 18px;
+            margin-top: 4rem;
+        }
+
+        .breadcrumbs {
+            color: var(--muted);
+            font-size: 13px;
+            opacity: .85;
+        }
+
+        .page-title {
+            font-size: clamp(24px, 3vw, 34px);
+            margin: 6px 0 8px;
+        }
+
+        .page-subtitle {
+            color: var(--muted);
+            max-width: 820px;
+        }
+
+        /* ======= Controls Bar ======= */
+        .controls {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+        }
+
+        @media (max-width: 720px) {
+            .controls {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .search {
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 14px 44px 14px 44px;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, #0e1330, #0b112b);
+            color: var(--text);
+            outline: none;
+            box-shadow: var(--shadow);
+        }
+
+        .search .icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: .7;
+        }
+
+        .sort {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(180deg, var(--panel), var(--panel-2));
+            border: 1px solid var(--border);
+            padding: 10px 12px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow);
+        }
+
+        .sort select {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-weight: 600;
+            outline: none;
+        }
+
+        /* ======= Chips / Filters ======= */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .chip {
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, var(--chip), #141a3b);
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+
+        .chip.active {
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            color: #0a0d1e;
+            border-color: transparent;
+        }
+
+        .chip:hover {
+            transform: translateY(-1px);
+        }
+
+        /* ======= Grid ======= */
+        .grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 18px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 1100px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 820px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            position: relative;
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, #49007F, var(--panel-2));
+            border-radius: var(--radius-xl);
+            padding: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform .2s ease, border-color .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #2a3270;
+        }
+
+        .card .badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: #0a0d1e;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+        }
+
+        .card .iconwrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(180px 100px at 0% 0%, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0)),
+                linear-gradient(135deg, #1b2360, #171e48);
+            border: 1px solid var(--border);
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 6px 0 4px;
+            font-size: 18px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #6b7cff;
+        }
+
+        /* ======= Pagination ======= */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 22px 0 40px;
+        }
+
+        .page-btn {
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, var(--panel), var(--panel-2));
+            color: var(--text);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            min-width: 42px;
+            text-align: center;
+            transition: transform .2s ease, border-color .2s ease;
+        }
+
+        .page-btn:hover {
+            transform: translateY(-1px);
+            border-color: #2a3270;
+        }
+
+        .page-btn.active {
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            color: #0a0d1e;
+            border-color: transparent;
+        }
+
+        /* ======= Footer ======= */
+        footer {
+            border-top: 1px solid var(--border);
+            background: linear-gradient(180deg, #0b0f24, #0a0d1e);
+            color: var(--muted);
+            padding: 24px 0 50px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* ======= Utility Icons (Inline SVG) ======= */
+        svg {
+            display: block;
+        }
+
+        .i16 {
+            width: 16px;
+            height: 16px;
+            opacity: .9;
+        }
+
+        .i20 {
+            width: 20px;
+            height: 20px;
+            opacity: .9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('../components/navbar') %>
+        <!-- Page Head -->
+        <section class="pagehead">
+            <div class="container">
+                <h1 class="page-title">Browse Categories</h1>
+                <p class="page-subtitle">Explore topics across development, design, business, and more. Use the search
+                    and filters to quickly find what you’re into.</p>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <div class="search">
+                        <span class="icon" aria-hidden="true">
+                            <svg class="i20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </span>
+                        <input id="searchInput" type="search" placeholder="Search categories..."
+                            aria-label="Search categories" />
+                    </div>
+                    <div class="sort" role="group" aria-label="Sort categories">
+                        <svg class="i20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M3 6h18M6 12h12M9 18h6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                        <label for="sortSelect" class="visually-hidden">Sort</label>
+                        <select id="sortSelect">
+                            <option value="popular">Most Popular</option>
+                            <option value="name">Name (A→Z)</option>
+                            <option value="courses">Courses Count</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Chips -->
+                <div class="chips" id="chips"></div>
+            </div>
+        </section>
+
+        <!-- Grid -->
+        <main class="container">
+            <div class="grid" id="grid"></div>
+            <div class="pagination" id="pagination" aria-label="Pagination"></div>
+        </main>
+        <%- include('../components/footer') %>
+
+            <script>
+                // ======= Demo Dataset =======
+                const CATEGORIES = [
+                    { id: 1, name: 'Web Development', slug: 'web-dev', color: '#6ea8fe', desc: 'HTML, CSS, JS, frameworks, tooling', courses: 128, tag: 'Development' },
+                    { id: 2, name: 'Data Science', slug: 'data-science', color: '#3ddc97', desc: 'Python, ML, visualization', courses: 92, tag: 'Data' },
+                    { id: 3, name: 'UI/UX Design', slug: 'ui-ux', color: '#ffd166', desc: 'Figma, prototyping, UX writing', courses: 56, tag: 'Design' },
+                    { id: 4, name: 'Mobile Development', slug: 'mobile-dev', color: '#ff6b6b', desc: 'Android, iOS, Flutter', courses: 74, tag: 'Development' },
+                    { id: 5, name: 'Cloud & DevOps', slug: 'cloud-devops', color: '#9b86ff', desc: 'AWS, Azure, Docker, CI/CD', courses: 81, tag: 'IT' },
+                    { id: 6, name: 'Cybersecurity', slug: 'security', color: '#70e1ff', desc: 'Network, ethical hacking, SOC', courses: 34, tag: 'IT' },
+                    { id: 7, name: 'Business & Management', slug: 'business', color: '#7bdcb5', desc: 'Ops, strategy, leadership', courses: 48, tag: 'Business' },
+                    { id: 8, name: 'Marketing', slug: 'marketing', color: '#f78da7', desc: 'SEO, ads, content, branding', courses: 63, tag: 'Business' },
+                    { id: 9, name: 'Game Development', slug: 'gamedev', color: '#a0c4ff', desc: 'Unity, Unreal, game design', courses: 22, tag: 'Development' },
+                    { id: 10, name: 'AI & Machine Learning', slug: 'ai-ml', color: '#caffbf', desc: 'Models, MLOps, LLMs', courses: 41, tag: 'Data' },
+                    { id: 11, name: 'Finance', slug: 'finance', color: '#ffd6a5', desc: 'Markets, analysis, fintech', courses: 19, tag: 'Business' },
+                    { id: 12, name: 'Photography', slug: 'photo', color: '#bdb2ff', desc: 'Cameras, editing, composition', courses: 27, tag: 'Creative' },
+                    { id: 13, name: 'Music Production', slug: 'music', color: '#ffc6ff', desc: 'DAWs, mixing, songwriting', courses: 25, tag: 'Creative' },
+                    { id: 14, name: 'Personal Development', slug: 'personal-dev', color: '#fdffb6', desc: 'Productivity, habits, life', courses: 33, tag: 'Lifestyle' },
+                    { id: 15, name: 'Health & Fitness', slug: 'fitness', color: '#bde0fe', desc: 'Workout, nutrition, yoga', courses: 29, tag: 'Lifestyle' },
+                    { id: 16, name: 'Language Learning', slug: 'languages', color: '#ffa6c1', desc: 'English, Spanish, more', courses: 37, tag: 'Lifestyle' },
+                ];
+
+                const TAGS = ['All', 'Development', 'Data', 'Design', 'IT', 'Business', 'Creative', 'Lifestyle'];
+
+                // ======= State & Elements =======
+                const grid = document.getElementById('grid');
+                const searchInput = document.getElementById('searchInput');
+                const sortSelect = document.getElementById('sortSelect');
+                const chips = document.getElementById('chips');
+                const pagination = document.getElementById('pagination');
+
+                const state = {
+                    q: '',
+                    tag: 'All',
+                    sort: 'popular',
+                    page: 1,
+                    perPage: 8,
+                };
+
+                // ======= Utilities =======
+                const by = (k) => (a, b) => (a[k] > b[k]) ? 1 : (a[k] < b[k] ? -1 : 0);
+
+                function filterData() {
+                    let data = [...CATEGORIES];
+                    if (state.tag !== 'All') data = data.filter(c => c.tag === state.tag);
+                    if (state.q) {
+                        const q = state.q.toLowerCase();
+                        data = data.filter(c => c.name.toLowerCase().includes(q) || c.desc.toLowerCase().includes(q));
+                    }
+                    if (state.sort === 'name') data.sort(by('name'));
+                    if (state.sort === 'courses') data.sort(by('courses')).reverse();
+                    if (state.sort === 'popular') data.sort(by('courses')).reverse();
+                    return data;
+                }
+
+                function paginate(data) {
+                    const start = (state.page - 1) * state.perPage;
+                    const end = start + state.perPage;
+                    return { total: data.length, slice: data.slice(start, end) };
+                }
+
+                function renderChips() {
+                    chips.innerHTML = TAGS.map(tag => `
+        <button class="chip ${state.tag === tag ? 'active' : ''}" data-tag="${tag}" aria-pressed="${state.tag === tag}">${tag}</button>
+      `).join('');
+                }
+
+                function cardTemplate(c) {
+                    return `
+      <article class="card" tabindex="0" aria-label="${c.name} category">
+        <span class="badge">${c.courses} courses</span>
+        <div class="iconwrap" style="background: radial-gradient(180px 100px at 0% 0%, rgba(255,255,255,.14), rgba(255,255,255,0)), linear-gradient(135deg, ${shade(c.color, -20)}, ${shade(c.color, -35)}); border-color: var(--border)">
+          ${circleIcon(c.color)}
+        </div>
+        <h3>${c.name}</h3>
+        <p>${c.desc}</p>
+        <div class="meta"><span class="dot" style="background:${c.color}"></span><span>${c.tag}</span></div>
+      </article>`;
+                }
+
+                function circleIcon(fill) {
+                    return `<svg class="i20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="${fill}"/></svg>`;
+                }
+
+                function shade(hex, percent) {
+                    // simple hex shade util
+                    const f = parseInt(hex.slice(1), 16), t = percent < 0 ? 0 : 255, p = Math.abs(percent) / 100;
+                    const R = f >> 16, G = f >> 8 & 0x00FF, B = f & 0x0000FF;
+                    const r = Math.round((t - R) * p) + R, g = Math.round((t - G) * p) + G, b = Math.round((t - B) * p) + B;
+                    return `#${(0x1000000 + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+                }
+
+                function render() {
+                    // chips
+                    renderChips();
+
+                    const data = filterData();
+                    const { total, slice } = paginate(data);
+
+                    // grid
+                    grid.innerHTML = slice.map(cardTemplate).join('');
+
+                    // pagination
+                    const pages = Math.max(1, Math.ceil(total / state.perPage));
+                    if (state.page > pages) state.page = pages; // clamp
+                    pagination.innerHTML = `
+        <button class="page-btn" data-page="prev" ${state.page === 1 ? 'disabled' : ''}>\u2039</button>
+        ${Array.from({ length: pages }, (_, i) => i + 1).map(p => `
+          <button class="page-btn ${state.page === p ? 'active' : ''}" data-page="${p}">${p}</button>
+        `).join('')}
+        <button class="page-btn" data-page="next" ${state.page === pages ? 'disabled' : ''}>\u203A</button>
+      `;
+                }
+
+                // ======= Events =======
+                searchInput.addEventListener('input', (e) => {
+                    state.q = e.target.value.trim();
+                    state.page = 1;
+                    render();
+                });
+
+                sortSelect.addEventListener('change', (e) => {
+                    state.sort = e.target.value;
+                    state.page = 1;
+                    render();
+                });
+
+                chips.addEventListener('click', (e) => {
+                    const b = e.target.closest('.chip');
+                    if (!b) return;
+                    state.tag = b.dataset.tag;
+                    state.page = 1;
+                    render();
+                });
+
+                pagination.addEventListener('click', (e) => {
+                    const b = e.target.closest('.page-btn');
+                    if (!b) return;
+                    const pages = Math.max(1, Math.ceil(filterData().length / state.perPage));
+                    if (b.dataset.page === 'prev') state.page = Math.max(1, state.page - 1);
+                    else if (b.dataset.page === 'next') state.page = Math.min(pages, state.page + 1);
+                    else state.page = Number(b.dataset.page);
+                    render();
+                });
+
+
+
+                // Initial render
+                render();
+            </script>
+</body>
+
+</html>

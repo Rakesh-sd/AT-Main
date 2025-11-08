@@ -41,6 +41,10 @@ app.get("/sample", (req, res) => {
   res.render("pages/sample");
 });
 
+app.get("/catalog", (req, res) => {
+  res.render("pages/catalog");
+});
+
 // error handling
 app.use(function (req, res, next) {
   next(createError(404));

@@ -107,6 +107,7 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       will-change: transform;
+      margin-top: 4rem;
     }
 
     .hero-left {
@@ -574,15 +575,17 @@
 </head>
 
 <body>
+    <%- include('../components/navbar') %>
+
   <canvas id="bgCanvas"></canvas>
   <div class="wrap">
 
     <!-- Header -->
-    <header class="breadcrumbs">
+    <!-- <header class="breadcrumbs">
       <nav class="crumbs">
         <a href="#">Home</a> / <a href="#">CSE/IT</a> / <span>Machine Learning</span>
       </nav>
-    </header>
+    </header> -->
 
     <!-- Hero -->
     <section class="hero">

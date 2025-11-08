@@ -42,7 +42,8 @@ header.breadcrumbs{display:flex;align-items:center;gap:16px;margin-bottom:18px}
 .crumbs{font-size:13px;color:var(--muted)}
 .crumbs a{color:var(--muted);text-decoration:none}
 .course-title{display:flex;align-items:flex-start;gap:18px}
-.hero{background:linear-gradient(90deg,rgba(73,0,127,0.08),rgba(125,51,185,0.02));padding:22px;border-radius:12px;display:flex;gap:20px;align-items:center;box-shadow:var(--shadow);}
+.hero{background:linear-gradient(90deg,rgba(73,0,127,0.08),rgba(125,51,185,0.02));padding:22px;border-radius:12px;display:flex;gap:20px;align-items:center;box-shadow:var(--shadow);
+margin-top: 4rem;}
 .hero-left{flex:1; transform:translateX(-30px); opacity:0; transition: all 1s ease;}
 .hero-left.visible{transform:translateX(0); opacity:1;}
 .badge{display:inline-block;padding:8px 12px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#fff;border-radius:999px;font-weight:600;font-size:13px}
@@ -110,14 +111,16 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
 </style>
 </head>
 <body>
+    <%- include('../components/navbar') %>
+
 <canvas id="bgCanvas"></canvas>
 <div class="wrap">
   <!-- Header -->
-  <header class="breadcrumbs">
+  <!-- <header class="breadcrumbs">
     <nav class="crumbs">
       <a href="#">Home</a> / <a href="#">CSE/IT</a> / <span>Machine Learning</span>
     </nav>
-  </header>
+  </header> -->
 
   <!-- Hero -->
   <section class="hero">
