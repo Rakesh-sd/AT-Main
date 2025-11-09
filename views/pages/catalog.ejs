@@ -42,9 +42,10 @@
         body {
             margin: 0;
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-            background: radial-gradient(1200px 800px at 10% -10%, #49007F 0%, transparent 60%),
+            /* background: radial-gradient(1200px 800px at 10% -10%, #49007F 0%, transparent 60%),
                 radial-gradient(1000px 600px at 90% -10%, #2c1f66 0%, transparent 60%),
-                var(--bg);
+                var(--bg); */
+            background: radial-gradient(#49007F 0%, transparent 60%), radial-gradient(#2c1f66 0%, transparent 60%), var(--bg);
             color: var(--text);
             line-height: 1.5;
         }
@@ -265,6 +266,8 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform .2s ease, border-color .2s ease;
+            text-decoration: none;
+            color: white;
         }
 
         .card:hover {
@@ -357,14 +360,14 @@
         }
 
         /* ======= Footer ======= */
-        footer {
+        /* footer {
             border-top: 1px solid var(--border);
             background: linear-gradient(180deg, #0b0f24, #0a0d1e);
             color: var(--muted);
             padding: 24px 0 50px;
             text-align: center;
             font-size: 13px;
-        }
+        } */
 
         /* ======= Utility Icons (Inline SVG) ======= */
         svg {
@@ -418,7 +421,7 @@
                         <select id="sortSelect">
                             <option value="popular">Most Popular</option>
                             <option value="name">Name (A→Z)</option>
-                            <option value="courses">Courses Count</option>
+                            <option value="rating">Rating Count</option>
                         </select>
                     </div>
                 </div>
@@ -438,22 +441,22 @@
             <script>
                 // ======= Demo Dataset =======
                 const CATEGORIES = [
-                    { id: 1, name: 'Web Development', slug: 'web-dev', color: '#6ea8fe', desc: 'HTML, CSS, JS, frameworks, tooling', courses: 128, tag: 'Development' },
-                    { id: 2, name: 'Data Science', slug: 'data-science', color: '#3ddc97', desc: 'Python, ML, visualization', courses: 92, tag: 'Data' },
-                    { id: 3, name: 'UI/UX Design', slug: 'ui-ux', color: '#ffd166', desc: 'Figma, prototyping, UX writing', courses: 56, tag: 'Design' },
-                    { id: 4, name: 'Mobile Development', slug: 'mobile-dev', color: '#ff6b6b', desc: 'Android, iOS, Flutter', courses: 74, tag: 'Development' },
-                    { id: 5, name: 'Cloud & DevOps', slug: 'cloud-devops', color: '#9b86ff', desc: 'AWS, Azure, Docker, CI/CD', courses: 81, tag: 'IT' },
-                    { id: 6, name: 'Cybersecurity', slug: 'security', color: '#70e1ff', desc: 'Network, ethical hacking, SOC', courses: 34, tag: 'IT' },
-                    { id: 7, name: 'Business & Management', slug: 'business', color: '#7bdcb5', desc: 'Ops, strategy, leadership', courses: 48, tag: 'Business' },
-                    { id: 8, name: 'Marketing', slug: 'marketing', color: '#f78da7', desc: 'SEO, ads, content, branding', courses: 63, tag: 'Business' },
-                    { id: 9, name: 'Game Development', slug: 'gamedev', color: '#a0c4ff', desc: 'Unity, Unreal, game design', courses: 22, tag: 'Development' },
-                    { id: 10, name: 'AI & Machine Learning', slug: 'ai-ml', color: '#caffbf', desc: 'Models, MLOps, LLMs', courses: 41, tag: 'Data' },
-                    { id: 11, name: 'Finance', slug: 'finance', color: '#ffd6a5', desc: 'Markets, analysis, fintech', courses: 19, tag: 'Business' },
-                    { id: 12, name: 'Photography', slug: 'photo', color: '#bdb2ff', desc: 'Cameras, editing, composition', courses: 27, tag: 'Creative' },
-                    { id: 13, name: 'Music Production', slug: 'music', color: '#ffc6ff', desc: 'DAWs, mixing, songwriting', courses: 25, tag: 'Creative' },
-                    { id: 14, name: 'Personal Development', slug: 'personal-dev', color: '#fdffb6', desc: 'Productivity, habits, life', courses: 33, tag: 'Lifestyle' },
-                    { id: 15, name: 'Health & Fitness', slug: 'fitness', color: '#bde0fe', desc: 'Workout, nutrition, yoga', courses: 29, tag: 'Lifestyle' },
-                    { id: 16, name: 'Language Learning', slug: 'languages', color: '#ffa6c1', desc: 'English, Spanish, more', courses: 37, tag: 'Lifestyle' },
+                    { id: 1, name: 'Web Development', url: '/course', color: '#6ea8fe', desc: 'HTML, CSS, JS, frameworks, tooling', rating: 4.7, tag: 'Development' },
+                    { id: 2, name: 'Data Science', url: '/course', color: '#3ddc97', desc: 'Python, ML, visualization', rating: 4.6, tag: 'Data' },
+                    { id: 3, name: 'UI/UX Design', url: '/course', color: '#ffd166', desc: 'Figma, prototyping, UX writing', rating: 4.3, tag: 'Design' },
+                    { id: 4, name: 'Mobile Development', url: '/course', color: '#ff6b6b', desc: 'Android, iOS, Flutter', rating: 4.5, tag: 'Development' },
+                    { id: 5, name: 'Cloud & DevOps', url: '/course', color: '#9b86ff', desc: 'AWS, Azure, Docker, CI/CD', rating: 4.2, tag: 'IT' },
+                    { id: 6, name: 'Cybersecurity', url: '/course', color: '#70e1ff', desc: 'Network, ethical hacking, SOC', rating: 4.1, tag: 'IT' },
+                    { id: 7, name: 'Business & Management', url: '/course', color: '#7bdcb5', desc: 'Ops, strategy, leadership', rating: 3.8, tag: 'Business' },
+                    { id: 8, name: 'Marketing', url: '/course', color: '#f78da7', desc: 'SEO, ads, content, branding', rating: 3.9, tag: 'Business' },
+                    { id: 9, name: 'Game Development', url: '/course', color: '#a0c4ff', desc: 'Unity, Unreal, game design', rating: 3.5, tag: 'Development' },
+                    { id: 10, name: 'AI & Machine Learning', url: '/course', color: '#caffbf', desc: 'Models, MLOps, LLMs', rating: 4.8, tag: 'Data' },
+                    { id: 11, name: 'Finance', url: '/course', color: '#ffd6a5', desc: 'Markets, analysis, fintech', rating: 4.2, tag: 'Business' },
+                    { id: 12, name: 'Photography', url: '/course', color: '#bdb2ff', desc: 'Cameras, editing, composition', rating: 3.9, tag: 'Creative' },
+                    { id: 13, name: 'Music Production', url: '/course', color: '#ffc6ff', desc: 'DAWs, mixing, songwriting', rating: 3.8, tag: 'Creative' },
+                    { id: 14, name: 'Personal Development', url: '/course', color: '#fdffb6', desc: 'Productivity, habits, life', rating: 3.7, tag: 'Lifestyle' },
+                    { id: 15, name: 'Health & Fitness', url: '/course', color: '#bde0fe', desc: 'Workout, nutrition, yoga', rating: 3.5, tag: 'Lifestyle' },
+                    { id: 16, name: 'Language Learning', url: '/course', color: '#ffa6c1', desc: 'English, Spanish, more', rating: 3.5, tag: 'Lifestyle' },
                 ];
 
                 const TAGS = ['All', 'Development', 'Data', 'Design', 'IT', 'Business', 'Creative', 'Lifestyle'];
@@ -484,8 +487,8 @@
                         data = data.filter(c => c.name.toLowerCase().includes(q) || c.desc.toLowerCase().includes(q));
                     }
                     if (state.sort === 'name') data.sort(by('name'));
-                    if (state.sort === 'courses') data.sort(by('courses')).reverse();
-                    if (state.sort === 'popular') data.sort(by('courses')).reverse();
+                    if (state.sort === 'rating') data.sort(by('rating')).reverse();
+                    if (state.sort === 'popular') data.sort(by('rating')).reverse();
                     return data;
                 }
 
@@ -503,16 +506,17 @@
 
                 function cardTemplate(c) {
                     return `
-      <article class="card" tabindex="0" aria-label="${c.name} category">
-        <span class="badge">${c.courses} courses</span>
-        <div class="iconwrap" style="background: radial-gradient(180px 100px at 0% 0%, rgba(255,255,255,.14), rgba(255,255,255,0)), linear-gradient(135deg, ${shade(c.color, -20)}, ${shade(c.color, -35)}); border-color: var(--border)">
-          ${circleIcon(c.color)}
-        </div>
-        <h3>${c.name}</h3>
-        <p>${c.desc}</p>
-        <div class="meta"><span class="dot" style="background:${c.color}"></span><span>${c.tag}</span></div>
-      </article>`;
+    <a href="${c.url}" class="card" tabindex="0" aria-label="${c.name} category">
+      <span class="badge">${c.rating} rating</span>
+      <div class="iconwrap" style="background: radial-gradient(180px 100px at 0% 0%, rgba(255,255,255,.14), rgba(255,255,255,0)), linear-gradient(135deg, ${shade(c.color, -20)}, ${shade(c.color, -35)}); border-color: var(--border)">
+        ${circleIcon(c.color)}
+      </div>
+      <h3>${c.name}</h3>
+      <p>${c.desc}</p>
+      <div class="meta"><span class="dot" style="background:${c.color}"></span><span>${c.tag}</span></div>
+    </a>`;
                 }
+
 
                 function circleIcon(fill) {
                     return `<svg class="i20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="${fill}"/></svg>`;

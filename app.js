@@ -37,7 +37,7 @@ app.get("/inner2", (req, res) => {
   res.render("pages/inner2");
 });
 
-app.get("/sample", (req, res) => {
+app.get("/course", (req, res) => {
   res.render("pages/sample");
 });
 
