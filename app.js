@@ -45,6 +45,18 @@ app.get("/catalog", (req, res) => {
   res.render("pages/catalog");
 });
 
+app.get("/privacy-policy", (req, res) => {
+  res.render("pages/privacy");
+});
+
+app.get("/terms-&-conditions", (req, res) => {
+  res.render("pages/terms");
+});
+
+app.get("/refund-policy", (req, res) => {
+  res.render("pages/refund");
+});
+
 // error handling
 app.use(function (req, res, next) {
   next(createError(404));
