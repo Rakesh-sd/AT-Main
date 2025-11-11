@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Categories</title>
     <meta name="description" content="A clean, responsive categories page built with only HTML, CSS, and vanilla JS." />
-    <link rel="icon" type="image/x-icon" href="../../assests/home-page/logo.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -441,16 +441,19 @@
             <script>
                 // ======= Demo Dataset =======
                 const CATEGORIES = [
-                    { id: 1, name: 'Web Development', url: '/course', color: '#6ea8fe', desc: 'HTML, CSS, JS, frameworks, tooling', rating: 4.7, tag: 'Development' },
-                    { id: 2, name: 'Data Science', url: '/course', color: '#3ddc97', desc: 'Python, ML, visualization', rating: 4.6, tag: 'Data' },
-                    { id: 3, name: 'UI/UX Design', url: '/course', color: '#ffd166', desc: 'Figma, prototyping, UX writing', rating: 4.3, tag: 'Design' },
-                    { id: 4, name: 'Mobile Development', url: '/course', color: '#ff6b6b', desc: 'Android, iOS, Flutter', rating: 4.5, tag: 'Development' },
-                    { id: 5, name: 'Cloud & DevOps', url: '/course', color: '#9b86ff', desc: 'AWS, Azure, Docker, CI/CD', rating: 4.2, tag: 'IT' },
-                    { id: 6, name: 'Cybersecurity', url: '/course', color: '#70e1ff', desc: 'Network, ethical hacking, SOC', rating: 4.1, tag: 'IT' },
-                    { id: 7, name: 'Business & Management', url: '/course', color: '#7bdcb5', desc: 'Ops, strategy, leadership', rating: 3.8, tag: 'Business' },
-                    { id: 8, name: 'Marketing', url: '/course', color: '#f78da7', desc: 'SEO, ads, content, branding', rating: 3.9, tag: 'Business' },
+                    { id: 1, name: 'Web Development', url: '/full-stack-web-development', color: '#6ea8fe', desc: 'HTML, CSS, JS, frameworks, tooling', rating: 4.7, tag: 'Computer Science Courses' },
+                    { id: 2, name: 'Machine Learning', url: '/machine-learning', color: '#3ddc97', desc: 'Python, Regression, Classification', rating: 4.6, tag: 'Computer Science Courses' },
+                    { id: 3, name: 'Artificial Intelligence', url: '/artificial-intelligence', color: '#ffd166', desc: 'Neural Networks, Deep Learning', rating: 4.3, tag: 'Computer Science Courses' },
+                    { id: 4, name: 'Data Science', url: '/data-science', color: '#ff6b6b', desc: 'SQL, Data Visualization', rating: 4.5, tag: 'Computer Science Courses' },
+                    { id: 5, name: 'Cybersecurity', url: '/cyber-security', color: '#9b86ff', desc: 'Network Security, Penetration Testing, Cyber Defense', rating: 4.2, tag: 'Computer Science Courses' },
+                    { id: 6, name: 'Azure Cloud Computing', url: '/azure-cloud', color: '#70e1ff', desc: 'Microsoft Azure, Cloud Architecture, DevOps', rating: 4.1, tag: 'Computer Science Courses' },
+                    { id: 7, name: 'Augmented & Virtual Reality', url: '/augmented-virtual-reality', color: '#7bdcb5', desc: 'Unity, C#, 3D Modeling', rating: 3.8, tag: 'Computer Science Courses' },
+                    { id: 8, name: 'Android App Development', url: '/android-app', color: '#f78da7', desc: 'Kotlin, Android Studio, UI/UX Design', rating: 3.9, tag: 'Computer Science Courses' },
+
+
+
                     { id: 9, name: 'Game Development', url: '/course', color: '#a0c4ff', desc: 'Unity, Unreal, game design', rating: 3.5, tag: 'Development' },
-                    { id: 10, name: 'AI & Machine Learning', url: '/course', color: '#caffbf', desc: 'Models, MLOps, LLMs', rating: 4.8, tag: 'Data' },
+                    // { id: 10, name: 'AI & Machine Learning', url: '/course', color: '#caffbf', desc: 'Models, MLOps, LLMs', rating: 4.8, tag: 'Data' },
                     { id: 11, name: 'Finance', url: '/course', color: '#ffd6a5', desc: 'Markets, analysis, fintech', rating: 4.2, tag: 'Business' },
                     { id: 12, name: 'Photography', url: '/course', color: '#bdb2ff', desc: 'Cameras, editing, composition', rating: 3.9, tag: 'Creative' },
                     { id: 13, name: 'Music Production', url: '/course', color: '#ffc6ff', desc: 'DAWs, mixing, songwriting', rating: 3.8, tag: 'Creative' },
@@ -459,7 +462,7 @@
                     { id: 16, name: 'Language Learning', url: '/course', color: '#ffa6c1', desc: 'English, Spanish, more', rating: 3.5, tag: 'Lifestyle' },
                 ];
 
-                const TAGS = ['All', 'Development', 'Data', 'Design', 'IT', 'Business', 'Creative', 'Lifestyle'];
+                const TAGS = ['All', 'Computer Science Courses', 'Data', 'Design', 'IT', 'Business', 'Creative', 'Lifestyle'];
 
                 // ======= State & Elements =======
                 const grid = document.getElementById('grid');
