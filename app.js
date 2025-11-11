@@ -29,16 +29,16 @@ app.get("/aboutus", (req, res) => {
   res.render("pages/aboutus");
 });
 
-app.get("/inner", (req, res) => {
-  res.render("pages/inner");
-});
+// app.get("/inner", (req, res) => {
+//   res.render("pages/inner1");
+// });
 
-app.get("/inner2", (req, res) => {
-  res.render("pages/inner2");
-});
+// app.get("/inner2", (req, res) => {
+//   res.render("pages/inner2");
+// });
 
 app.get("/course", (req, res) => {
-  res.render("pages/sample");
+  res.render("pages/inner");
 });
 
 app.get("/catalog", (req, res) => {
