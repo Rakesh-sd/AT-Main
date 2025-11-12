@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharmacovigilance — Course Details</title>
+  <meta name="description" content="Pharmacovigilance course — syllabus, projects, highlights, and enroll information" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
+  <style>
+    :root {
+      --brand: #49007F;
+      --brand-2: #7D33B9;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --accent: #f3f9ff;
+      --radius: 14px;
+      --shadow: 0 8px 30px rgba(12, 15, 29, 0.06);
+      --max-width: 1100px;
+      --container-padding: 20px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    body {
+      background: #49007F;
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: #0b1220;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    canvas#bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 32px auto;
+      padding: var(--container-padding);
+    }
+
+    header.breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .crumbs {
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .crumbs a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .course-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .hero {
+      position: relative;
+      background: #fff;
+      padding: 22px;
+      border-radius: 12px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      will-change: transform;
+      margin-top: 4rem;
+    }
+
+    .hero-left {
+      flex: 1;
+      transform: translateX(-30px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .hero-left.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .hero-left .badge {
+      transition: transform 0.4s ease;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+      will-change: transform;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 8px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-right {
+      width: 320px;
+      min-width: 220px;
+      transform: translateX(30px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .hero-right.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .card {
+      background: var(--brand);
+      color: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .tag {
+      background: #f2f7ff;
+      color: var(--brand-2);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      will-change: transform;
+    }
+
+    .hero-description {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tag-container {
+      margin-top: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .cta {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--brand-2);
+      color: var(--brand-2);
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .list .row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    hr.separator {
+      margin: 14px 0;
+      border: none;
+      border-top: 1px solid #f1f6ff;
+    }
+
+    .card-info-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card-info-column {
+      text-align: right;
+    }
+
+    .card-info-small {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .card-info-medium {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .card-info-strong {
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .section {
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+      will-change: transform, opacity;
+    }
+
+    .section.visible {
+      background: #fff;
+      color: #49007F;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h2,
+    .section h3 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+    }
+
+    .section p {
+      color: #fff;
+      margin: 0 0 12px 0;
+    }
+
+    .accordion {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .accordion .item {
+      border-top: 1px solid #eef2ff;
+      padding: 14px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .accordion .item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .accordion .item:first-child {
+      border-top: 0;
+    }
+
+    .accordion .item .left {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .module-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #f6f0ff, var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--brand-2);
+      transition: transform 0.3s ease;
+    }
+
+    .accordion .content {
+      padding: 12px 12px 20px 60px;
+      color: var(--muted);
+      display: none;
+    }
+
+    .accordion .item:hover {
+      background: #fbfdff;
+    }
+
+    .topics-column {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .topics-column h3 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .topics-column ul {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .teacher {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #f6f0ff, #fff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--brand-2);
+      transition: transform 0.3s ease;
+    }
+
+    .teacher-info {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .teacher-info-strong {
+      font-weight: 700;
+    }
+
+    .teacher-info-small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .faq .q {
+      padding: 12px;
+      background: #fbfbff;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .faq .q.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .faq .a {
+      padding: 12px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      display: none;
+    }
+
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #fff, #f5fbff);
+      font-weight: 600;
+    }
+
+    .item-hover {
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .item-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 22px 45px rgba(12, 15, 29, 0.1);
+    }
+
+    .section.primary {
+      background: #7D33B9;
+      color: #fff;
+    }
+
+    .section.primary .tag {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .section.primary .module-num {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .section.primary .avatar {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .section.primary .faq .q {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .section.primary .faq .a {
+      color: #fff;
+    }
+
+    .section.primary ul,
+    .section.primary ol {
+      color: #fff;
+    }
+
+    .certificates img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ==================== MOBILE RESPONSIVE ==================== */
+    @media (max-width: 980px) {
+      /* Hero */
+      .hero {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+      }
+
+      .hero-left,
+      .hero-right {
+        width: 100%;
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .hero-left {
+        order: 1;
+      }
+
+      .hero-right {
+        order: 2;
+      }
+
+      /* Grid stacking */
+      main.grid {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Section reorder mobile */
+      /* Syllabus first */
+      .grid > div > .section.alt:nth-of-type(2) {
+        order: 1;
+      }
+
+      /* Projects after syllabus */
+      .grid > div > .section.primary:nth-of-type(2) {
+        order: 2;
+      }
+
+      /* Why choose */
+      .grid > aside .section.alt.card-alt {
+        order: 3;
+      }
+
+      /* Batch Info */
+      .grid > aside .section.primary {
+        order: 4;
+      }
+
+      /* Instructor */
+      .grid > div > .section.alt.item-hover:nth-of-type(3) {
+        order: 5;
+      }
+
+      /* Certificates */
+      .grid > aside .certificates {
+        order: 6;
+      }
+
+      /* Student Reviews */
+      .grid > aside .section.alt.item-hover:nth-of-type(4) {
+        order: 7;
+      }
+
+      /* FAQ */
+      .grid > div > .section.primary.item-hover:nth-of-type(3) {
+        order: 8;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('../components/navbar') %>
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="badge">Top Rated • 4.7 ⭐</span>
+            <div class="course-title">
+                <div>
+                    <h1>Pharmacovigilance Course</h1>
+                    <div class="meta">40 hours • 8 Modules • Certificate • Case Studies</div>
+                </div>
+            </div>
+            <div class="tag-container">
+                <div class="tags">
+                    <span class="tag">Drug Safety</span>
+                    <span class="tag">Clinical Research</span>
+                    <span class="tag">Regulatory Affairs</span>
+                    <span class="tag">Medical Writing</span>
+                </div>
+            </div>
+            <div class="hero-description">
+                Learn how to monitor, assess, and prevent adverse effects of pharmaceutical products.
+                Master regulatory guidelines, case processing, and real-world pharmacovigilance practices used in the
+                life sciences industry.
+            </div>
+        </div>
+
+        <aside class="hero-right card sticky">
+            <div class="card-info-row">
+                <div>
+                    <div class="card-info-medium">Course fee</div>
+                    <div class="price">₹5,999</div>
+                </div>
+                <div class="card-info-column">
+                    <div class="card-info-small">Duration</div>
+                    <div class="card-info-strong">40 hrs</div>
+                </div>
+            </div>
+            <div class="cta">
+                <button class="btn btn-primary" id="enrollBtn">Enroll Now</button>
+                <button class="btn btn-ghost" id="brochureBtn">Download Brochure</button>
+            </div>
+            <hr class="separator" />
+            <div class="list">
+                <div class="row"><strong>Mode:</strong><span class="teacher-info">Online Live</span></div>
+                <div class="row"><strong>Certification:</strong><span class="teacher-info">Yes (On completion)</span></div>
+                <div class="row"><strong>Seats:</strong><span class="teacher-info">Limited</span></div>
+            </div>
+        </aside>
+    </section>
+
+    <!-- Main Content -->
+    <main class="grid">
+        <div>
+            <!-- Section 1 -->
+            <section class="section primary item-hover">
+                <h2>What you'll learn</h2>
+                <p>
+                    By the end of this course, you’ll understand the principles of drug safety monitoring, regulatory
+                    compliance, case management, and signal detection used by global pharmaceutical companies.
+                </p>
+                <div class="tag-container">
+                    <div class="topics-column">
+                        <h3>Core topics</h3>
+                        <ul>
+                            <li>Introduction to Pharmacovigilance</li>
+                            <li>Drug Development & Clinical Trials Overview</li>
+                            <li>Adverse Event Reporting & Case Processing</li>
+                            <li>Signal Detection & Risk Management</li>
+                            <li>Global Regulatory Guidelines (ICH, WHO, EMA, FDA)</li>
+                        </ul>
+                    </div>
+                    <div class="topics-column">
+                        <h3>Hands-on</h3>
+                        <ul>
+                            <li>Case entry and narrative writing</li>
+                            <li>Using safety databases (Argus / ARISg concepts)</li>
+                            <li>Preparation of regulatory reports (CIOMS, PSUR)</li>
+                            <li>Mock audits and compliance reporting</li>
+                            <li>Capstone: End-to-end safety case handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2 - Syllabus -->
+            <section class="section alt item-hover">
+                <h2>Course syllabus</h2>
+                <div class="accordion" id="syllabus">
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">01</div>
+                            <div>
+                                <div class="card-info-strong">Introduction to Pharmacovigilance</div>
+                                <div class="card-info-small">Definition, importance & scope</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: What is PV, its evolution, global need for drug safety and post-marketing surveillance.</div>
+
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">02</div>
+                            <div>
+                                <div class="card-info-strong">Drug Development & Clinical Trials</div>
+                                <div class="card-info-small">Preclinical to post-marketing phases</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: Clinical research phases, role of PV in each stage, GCP principles.</div>
+
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">03</div>
+                            <div>
+                                <div class="card-info-strong">Case Processing & Data Entry</div>
+                                <div class="card-info-small">Adverse Event reporting workflow</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: Source documents, case intake, coding (MedDRA), narrative writing, follow-ups, quality checks.</div>
+
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">04</div>
+                            <div>
+                                <div class="card-info-strong">Regulatory Frameworks</div>
+                                <div class="card-info-small">ICH, WHO, EMA, FDA, CDSCO</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: Global safety reporting systems and compliance requirements.</div>
+
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">05</div>
+                            <div>
+                                <div class="card-info-strong">Signal Detection & Risk Management</div>
+                                <div class="card-info-small">Data analysis & pattern identification</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: Quantitative signal detection, risk assessment, and corrective actions.</div>
+
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">06</div>
+                            <div>
+                                <div class="card-info-strong">Aggregate Reporting</div>
+                                <div class="card-info-small">PSUR, PBRER & expedited reports</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: Compilation of periodic safety reports and compliance with timelines.</div>
+
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">07</div>
+                            <div>
+                                <div class="card-info-strong">Pharmacovigilance Databases</div>
+                                <div class="card-info-small">Argus, ARISg overview</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: Workflow understanding, case life cycle management, safety database tools.</div>
+
+                    <div class="item">
+                        <div class="left">
+                            <div class="module-num">08</div>
+                            <div>
+                                <div class="card-info-strong">Audits & Compliance</div>
+                                <div class="card-info-small">QA and inspections</div>
+                            </div>
+                        </div>
+                        <div>+</div>
+                    </div>
+                    <div class="content">Topics: Audit readiness, documentation, CAPA and PV system inspections.</div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="section primary item-hover">
+                <h2>Projects & Capstone</h2>
+                <p>Work on case-based exercises and simulations aligned with real-world pharmacovigilance practices.</p>
+                <ol>
+                    <li>Case narrative writing from sample AE reports</li>
+                    <li>Preparation of CIOMS forms</li>
+                    <li>Mock case entry using simulated database</li>
+                    <li>Signal detection mini-project</li>
+                    <li>Compliance report creation</li>
+                    <li>Capstone: End-to-end adverse event processing workflow</li>
+                </ol>
+            </section>
+
+            <!-- Instructor -->
+            <section class="section alt item-hover">
+                <h2>Instructor</h2>
+                <div class="teacher">
+                    <div class="avatar">SP</div>
+                    <div>
+                        <div class="teacher-info-strong">Dr. Sneha Patel</div>
+                        <div class="teacher-info">Drug Safety Associate — 10+ years experience</div>
+                        <div class="teacher-info">Office hours: Wed & Sat 6–8 PM</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="section primary item-hover">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq">
+                    <div class="q">Is this course suitable for beginners?</div>
+                    <div class="a">Yes, it starts from the fundamentals and gradually progresses to advanced topics.</div>
+
+                    <div class="q">Will I get a certificate?</div>
+                    <div class="a">Yes, you’ll receive a recognized certificate upon successful completion of all modules and capstone.</div>
+
+                    <div class="q">Can I get placement assistance?</div>
+                    <div class="a">Yes, our career support team provides interview guidance and job referrals to PV companies.</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="section alt card card-alt item-hover">
+                <h3>Why choose this course?</h3>
+                <p style="color:#49007F;">Learn from industry experts and gain hands-on experience with pharmacovigilance workflows and case systems.</p>
+                <ul>
+                    <li>Live interactive sessions</li>
+                    <li>Industry case studies</li>
+                    <li>Compliance-focused learning</li>
+                </ul>
+            </div>
+
+            <div class="section primary item-hover">
+                <h3>Batch Info</h3>
+                <div class="teacher-info" style="color:#fff;">
+                    Weekday & weekend batches available.<br>Next batch starts: <strong>Jan 15, 2026</strong>
+                </div>
+            </div>
+
+            <div class="section alt item-hover">
+                <h3>Student Reviews</h3>
+                <div class="teacher-info">
+                    <div class="teacher-info-strong">"Practical and well-structured course on drug safety!"</div>
+                    <div class="teacher-info-small">— Riya, PV Associate</div>
+                </div>
+            </div>
+        </aside>
+    </main>
+</div>
+
+
+  <%- include('../components/footer') %>
+
+  <script>
+    // Accordion syllabus
+    document.querySelectorAll('#syllabus .item').forEach((it) => {
+      it.addEventListener('click', () => {
+        const next = it.nextElementSibling;
+        const open = it.getAttribute('data-open') === 'true';
+        document.querySelectorAll('#syllabus .content').forEach(c => c.style.display = 'none');
+        document.querySelectorAll('#syllabus .item').forEach(i => i.setAttribute('data-open', 'false'));
+        if (!open) { next.style.display = 'block'; it.setAttribute('data-open', 'true') }
+      })
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq .q').forEach(q => {
+      q.addEventListener('click', () => {
+        const ans = q.nextElementSibling;
+        const visible = ans.style.display === 'block';
+        ans.style.display = visible ? 'none' : 'block';
+      })
+    });
+
+    // Enroll & Brochure buttons
+    document.getElementById('enrollBtn').addEventListener('click', () => { alert('Enroll flow — replace with signup modal.'); })
+    document.getElementById('brochureBtn').addEventListener('click', () => {
+      const blob = new Blob([`Machine Learning — Course Brochure\n\nModules:\n1. Intro\n2. Supervised\n3. Trees\n4. Unsupervised\n5. Deployment\n`], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'ML-brochure.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Keyboard accessibility
+    document.querySelectorAll('.accordion .item, .faq .q').forEach(el => {
+      el.setAttribute('tabindex', 0);
+      el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') el.click(); })
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.section, .hero-left, .hero-right, .accordion .item, .faq .q').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Parallax effect on hero and badges
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      document.querySelectorAll('.hero-left, .hero-right').forEach(el => {
+        el.style.transform = `translateY(${scrollTop * 0.1}px)`;
+      });
+      document.querySelectorAll('.badge, .tag,').forEach(el => {
+        el.style.transform = `translateY(${scrollTop * 0.05}px)`;
+      });
+    });
+
+    // Background floating shapes
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let shapes = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    for (let i = 0; i < 60; i++) { shapes.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 30 + 5, dx: (Math.random() - 0.5) * 0.5, dy: (Math.random() - 0.5) * 0.5 }); }
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      shapes.forEach(s => {
+        s.x += s.dx; s.y += s.dy;
+        if (s.x > canvas.width || s.x < 0) s.dx *= -1;
+        if (s.y > canvas.height || s.y < 0) s.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>

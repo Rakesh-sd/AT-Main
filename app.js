@@ -93,71 +93,86 @@ app.get("/android-app", (req, res) => {
   res.render("./innerpages/android-app.ejs");
 });
 
-
-
-
-
-
-
-app.get("/robotics", (req, res) => {
-  res.render("./innerpages/robotics.ejs");
-});
-app.get("/cardesign", (req, res) => {
-  res.render("./innerpages/cardesign.ejs");
-});
-app.get("/hr", (req, res) => {
-  res.render("./innerpages/hr.ejs");
-});
-
-app.get("/business", (req, res) => {
-  res.render("./innerpages/business.ejs");
-});
-app.get("/stock", (req, res) => {
-  res.render("./innerpages/stock.ejs");
-});
-app.get("/marketing", (req, res) => {
-  res.render("./innerpages/marketing.ejs");
-});
-app.get("/finance", (req, res) => {
-  res.render("./innerpages/finance.ejs");
-});
-app.get("/nano", (req, res) => {
-  res.render("./innerpages/nano.ejs");
-});
-app.get("/genetic", (req, res) => {
-  res.render("./innerpages/genetic.ejs");
-});
-
-
+// ECE
 
 app.get("/iot", (req, res) => {
   res.render("./innerpages/iot.ejs");
 });
-app.get("/embedded", (req, res) => {
-  res.render("./innerpages/embedded.ejs");
+
+app.get("/robotics", (req, res) => {
+  res.render("./innerpages/robotics.ejs");
 });
+
+app.get("/embedded-system", (req, res) => {
+  res.render("./innerpages/embedded-system.ejs");
+});
+
+app.get("/hybrid-electric-Vehicles", (req, res) => {
+  res.render("./innerpages/hybrid-electric.ejs");
+});
+
+// Mechanical 
+
 app.get("/autocad", (req, res) => {
   res.render("./innerpages/autocad.ejs");
 });
-app.get("/icengine", (req, res) => {
-  res.render("./innerpages/icengine.ejs");
+app.get("/ic-engine", (req, res) => {
+  res.render("./innerpages/ic-engine.ejs");
 });
-app.get("/hybrid", (req, res) => {
-  res.render("./innerpages/hybrid.ejs");
-});
-app.get("/digital", (req, res) => {
-  res.render("./innerpages/digital.ejs");
+app.get("/car-design", (req, res) => {
+  res.render("./innerpages/car-design.ejs");
 });
 
-app.get("/medicalcoding", (req, res) => {
-  res.render("./innerpages/medicalcoding.ejs");
+// Management 
+
+app.get("/digital-marketing", (req, res) => {
+  res.render("./innerpages/digital-marketing.ejs");
+});
+
+app.get("/human-resource", (req, res) => {
+  res.render("./innerpages/hr.ejs");
+});
+
+app.get("/business-analytics", (req, res) => {
+  res.render("./innerpages/business-analytics.ejs");
+});
+
+app.get("/stock-market", (req, res) => {
+  res.render("./innerpages/stock-market.ejs");
+});
+
+app.get("/marketing-management", (req, res) => {
+  res.render("./innerpages/marketing.ejs");
+});
+
+app.get("/finance", (req, res) => {
+  res.render("./innerpages/finance.ejs");
+});
+
+// Biotechnology
+
+app.get("/nano-technology", (req, res) => {
+  res.render("./innerpages/nano.ejs");
+});
+app.get("/genetic-engineering", (req, res) => {
+  res.render("./innerpages/genetic.ejs");
+});
+
+// Pharmacy 
+
+app.get("/medical-coding", (req, res) => {
+  res.render("./innerpages/medical-coding.ejs");
 });
 app.get("/pharmacovigilance", (req, res) => {
   res.render("./innerpages/pharmacovigilance.ejs");
 });
-app.get("/clinicalsas", (req, res) => {
-  res.render("./innerpages/clinicalsas.ejs");
+app.get("/clinical-sas", (req, res) => {
+  res.render("./innerpages/clinical-sas.ejs");
 });
+
+
+
+
 
 // error handling
 app.use(function (req, res, next) {
