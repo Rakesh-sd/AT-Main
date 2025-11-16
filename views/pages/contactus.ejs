@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
-    SSS
 
     <style>
         :root {
@@ -213,7 +212,7 @@
                         message: document.getElementById("message").value,
                     };
 
-                    const res = await fetch("http://localhost:3000/api/contact", {
+                    const res = await fetch("https://aptustech.in/api/contact", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(data)
