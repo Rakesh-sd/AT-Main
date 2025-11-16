@@ -4,17 +4,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
+
 var app = express();
-const cors = require("cors");
-const { google } = require("googleapis");
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-
-
-
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -36,10 +27,6 @@ app.get("/", (req, res) => {
 
 app.get("/aboutus", (req, res) => {
   res.render("pages/aboutus");
-});
-
-app.get("/contactus", (req, res) => {
-  res.render("pages/contactus");
 });
 
 // app.get("/inner", (req, res) => {
@@ -124,7 +111,7 @@ app.get("/hybrid-electric-Vehicles", (req, res) => {
   res.render("./innerpages/hybrid-electric.ejs");
 });
 
-// Mechanical
+// Mechanical 
 
 app.get("/autocad", (req, res) => {
   res.render("./innerpages/autocad.ejs");
@@ -136,7 +123,7 @@ app.get("/car-design", (req, res) => {
   res.render("./innerpages/car-design.ejs");
 });
 
-// Management
+// Management 
 
 app.get("/digital-marketing", (req, res) => {
   res.render("./innerpages/digital-marketing.ejs");
@@ -171,7 +158,7 @@ app.get("/genetic-engineering", (req, res) => {
   res.render("./innerpages/genetic.ejs");
 });
 
-// Pharmacy
+// Pharmacy 
 
 app.get("/medical-coding", (req, res) => {
   res.render("./innerpages/medical-coding.ejs");
@@ -182,6 +169,10 @@ app.get("/pharmacovigilance", (req, res) => {
 app.get("/clinical-sas", (req, res) => {
   res.render("./innerpages/clinical-sas.ejs");
 });
+
+
+
+
 
 // error handling
 app.use(function (req, res, next) {
