@@ -62,7 +62,7 @@ app.post("/api/contact", async (req, res) => {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "Contact-Form!A:E",
+      range: "ContactForm!A:E",
       valueInputOption: "USER_ENTERED",
       resource: {
         values: [[currentTime, name, email, mobile, message]],
