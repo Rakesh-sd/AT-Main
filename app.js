@@ -100,9 +100,9 @@ app.get("/aboutus", (req, res) => {
   res.render("pages/aboutus");
 });
 
-app.get("/contactus", (req, res) => {
-  res.render("pages/contactus");
-});
+// app.get("/contactus", (req, res) => {
+//   res.render("pages/contactus");
+// });
 
 // app.get("/inner", (req, res) => {
 //   res.render("pages/inner1");
