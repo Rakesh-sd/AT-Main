@@ -12,13 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// GOOGLE SHEETS SETUP
-const auth = new google.auth.GoogleAuth({
-  keyFile: "key.json",
-  scopes: "https://www.googleapis.com/auth/spreadsheets",
-});
 
-const spreadsheetId = "1RGxl1LeSC3_33Lo2xz1Mko_Kod16LIrj4wDYSancMpE";
 
 
 
