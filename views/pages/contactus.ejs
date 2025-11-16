@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
+    SSS
+
+    <style>
+        :root {
+            --brand: #49007F;
+            --text: #222;
+            --light: #f6f3fb;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        /* Header */
+        .header {
+            background: var(--brand);
+            padding: 25px 0;
+            text-align: center;
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            gap: 40px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            margin-top: 7rem;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            margin-top: 0;
+            color: var(--brand);
+            font-size: 26px;
+        }
+
+        .info-item {
+            margin: 15px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--brand);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            background: var(--brand);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #300055;
+        }
+
+        /* Success message */
+        .alert {
+            padding: 14px;
+            background: #d6ffdb;
+            border-left: 5px solid #00b347;
+            border-radius: 6px;
+            margin-bottom: 14px;
+            display: none;
+        }
+
+        /* Map */
+        .map {
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('../components/navbar') %>
+
+        <!-- <div class="header">Contact Aptus Technologies</div> -->
+
+        <div class="contact-container">
+
+            <!-- Info Section -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+
+                <p class="info-item">
+                    <strong>📍 Address:</strong><br>
+                    Hive Space Business Centre, HS-003 Ground Floor,<br>
+                    Sy.12 Whitefield, Hi-tech City,<br>
+                    Hyderabad, Telangana 500084
+                </p>
+
+                <p class="info-item"><strong>📧 Email:</strong> support@aptustech.in</p>
+                <p class="info-item"><strong>📞 Phone:</strong> +91 84669 81225</p>
+
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.535501650505!2d78.36791877493752!3d17.43723128345271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f87e0a35e1%3A0x587f7d47e9e24387!2sHive%20Space%20Business%20Centre!5e0!3m2!1sen!2sin!4v1700000000001"
+                        width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <!-- Form Section -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+
+                <div class="alert" id="successMsg">Your message has been sent successfully!</div>
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" id="mobile" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+
+
+            </div>
+        </div>
+
+        <%- include('../components/footer') %>
+
+            <script>
+                document.getElementById("contactForm").addEventListener("submit", async function (e) {
+                    e.preventDefault();
+
+                    const data = {
+                        name: document.getElementById("name").value,
+                        email: document.getElementById("email").value,
+                        mobile: document.getElementById("mobile").value,
+                        message: document.getElementById("message").value,
+                    };
+
+                    const res = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await res.json();
+
+                    if (result.success) {
+                        document.getElementById("successMsg").style.display = "block";
+                        this.reset();
+                        setTimeout(() => {
+                            document.getElementById("successMsg").style.display = "none";
+                        }, 3000);
+                    } else {
+                        alert("Something went wrong!");
+                    }
+                });
+            </script>
+
+
+
+</body>
+
+</html>
