@@ -1,128 +1,76 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Returns & Refunds Policy — Aptus Technologies</title>
   <meta name="description" content="Returns and Refunds Policy for Aptus Technologies" />
   <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
-  <style>
-    :root{
-      --bg:#000;
-      --fg:#fff;
-      --muted:rgba(255,255,255,0.75);
-      --accent:rgba(255,255,255,0.95);
-      --container:960px;
-      --pad:28px;
-      --radius:12px;
-      --ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    body{
-        background: #49007F;
-    }
-    .refund{
-      margin:0;
-      min-height:100vh;
-      background:#49007F;
-      color:var(--fg);
-      font-family:var(--ui);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-      padding:36px;
-      display:flex;
-      justify-content:center;
-      margin-top: 4rem;
-    }
-    .card{
-      width:100%;
-      max-width:var(--container);
-      background:rgba(255,255,255,0.02);
-      border:1px solid rgba(255,255,255,0.05);
-      padding:var(--pad);
-      border-radius:var(--radius);
-      box-shadow:0 12px 30px rgba(0,0,0,0.6);
-    }
-    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-    .logo{
-      width:58px;height:58px;border-radius:10px;
-      display:flex;align-items:center;justify-content:center;
-      font-weight:700;font-size:18px;font-family:monospace;
-      background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03)
-    }
-    h1{margin:0;font-size:20px;color:var(--accent)}
-    .meta{color:var(--muted);font-size:13px;margin-top:6px}
-    section{margin:18px 0}
-    h2{margin:0 0 10px 0;color:var(--accent);font-size:16px}
-    p{margin:0 0 12px 0;color:var(--muted)}
-    ul{margin:0 0 12px 20px;color:var(--muted)}
-    li{margin-bottom:8px}
-    .note{
-      background:rgba(255,255,255,0.02);
-      padding:12px;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.05);
-      color:var(--muted);
-    }
-    a{color:var(--fg);text-decoration:underline}
-    
-    /* @media (max-width:560px){
-      body{padding:18px}
-      .card{padding:18px}
-      .logo{width:48px;height:48px}
-    } */
-  </style>
+  <link rel="stylesheet" href="../../stylesheets/policy.css">
 </head>
+
 <body>
 
-    <%- include('../components/navbar') %>
+  <%- include('../components/navbar') %>
 
-  <div class="refund"><article class="card" role="main" aria-labelledby="title">
-    <header>
-      <div class="logo" aria-hidden="true">AT</div>
-      <div>
-        <h1 id="title">Returns &amp; Refunds Policy — Aptus Technologies</h1>
-        <!-- <div class="meta">Effective: <strong>[Insert Effective Date]</strong></div> -->
-      </div>
-    </header>
+    <div class="refund">
+      <article class="card" role="main" aria-labelledby="title">
+        <header>
+          <div class="logo" aria-hidden="true">AT</div>
+          <div>
+            <h1 id="title">Returns &amp; Refunds Policy — Aptus Technologies</h1>
+            <!-- <div class="meta">Effective: <strong>[Insert Effective Date]</strong></div> -->
+          </div>
+        </header>
 
-    <section>
-      <p>Aptus Technologies provides several online and offline training programs and services. Depending on the program or service selected, the scope, deliverables, and payment terms may vary. By enrolling in or purchasing any of our services, you agree to the following terms.</p>
-    </section>
+        <section>
+          <p>Aptus Technologies provides several online and offline training programs and services. Depending on the
+            program or service selected, the scope, deliverables, and payment terms may vary. By enrolling in or
+            purchasing any of our services, you agree to the following terms.</p>
+        </section>
 
-    <section>
-      <h2>Refund Policy — 24-Hour Window</h2>
-      <p>All payments made in favor of Aptus Technologies are <strong>non-refundable after 24 hours</strong> from the time of payment, regardless of reason.</p>
+        <section>
+          <h2>Refund Policy — 24-Hour Window</h2>
+          <p>All payments made in favor of Aptus Technologies are <strong>non-refundable after 24 hours</strong> from
+            the time of payment, regardless of reason.</p>
 
-      <div class="note">
-        <strong>Please Note:</strong>
-        <ul>
-          <li>No refund applies to discounted slots, promotional packages, or special offers.</li>
-          <li>For programs or services purchased at regular website price, refund requests must be sent via email to <a href="mailto:support@aptustech.in">support@aptustech.in</a> within 24 hours of payment.</li>
-          <li>Failure to request a refund within this 24-hour window will result in forfeiture of eligibility for any refund.</li>
-        </ul>
-      </div>
-    </section>
+          <div class="note">
+            <strong>Please Note:</strong>
+            <ul>
+              <li>No refund applies to discounted slots, promotional packages, or special offers.</li>
+              <li>For programs or services purchased at regular website price, refund requests must be sent via email to
+                <a href="mailto:support@aptustech.in">support@aptustech.in</a> within 24 hours of payment.</li>
+              <li>Failure to request a refund within this 24-hour window will result in forfeiture of eligibility for
+                any refund.</li>
+            </ul>
+          </div>
+        </section>
 
-    <section>
-      <h2>Course / Service Information &amp; Payment Terms</h2>
-      <p>Information regarding our programs, services, and prices is available on the official website. By registering or subscribing, you agree to pay the indicated price as listed at the time of purchase.</p>
-      <p>During payment, you must provide accurate billing details including valid card or net-banking information. You confirm that you are over 18 years of age and legally capable of entering into a valid contract with Aptus Technologies.</p>
-    </section>
+        <section>
+          <h2>Course / Service Information &amp; Payment Terms</h2>
+          <p>Information regarding our programs, services, and prices is available on the official website. By
+            registering or subscribing, you agree to pay the indicated price as listed at the time of purchase.</p>
+          <p>During payment, you must provide accurate billing details including valid card or net-banking information.
+            You confirm that you are over 18 years of age and legally capable of entering into a valid contract with
+            Aptus Technologies.</p>
+        </section>
 
-    <section>
-      <h2>Contact Us</h2>
-      <p>If you have any questions or concerns regarding our Returns and Refunds Policy, please reach out to our support team:</p>
-      <div class="note">
-        Email: <a href="mailto:support@aptustech.in">support@aptustech.in</a><br>
-        Website: <a href="https://aptustech.in" target="_blank" rel="noopener">https://aptustech.in</a>
-      </div>
-    </section>
+        <section>
+          <h2>Contact Us</h2>
+          <p>If you have any questions or concerns regarding our Returns and Refunds Policy, please reach out to our
+            support team:</p>
+          <div class="note">
+            Email: <a href="mailto:support@aptustech.in">support@aptustech.in</a><br>
+            Website: <a href="https://aptustech.in" target="_blank" rel="noopener">https://aptustech.in</a>
+          </div>
+        </section>
 
-  </article></div>
+      </article>
+    </div>
 
-        <%- include('../components/footer') %>
+    <%- include('../components/footer') %>
 
 </body>
+
 </html>
