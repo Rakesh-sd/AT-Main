@@ -62,7 +62,7 @@ app.post("/api/contact", async (req, res) => {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "ContactForm!A:E",
+      range: "Contact-Form!A:E",
       valueInputOption: "USER_ENTERED",
       resource: {
         values: [[currentTime, name, email, mobile, message]],
@@ -100,9 +100,9 @@ app.get("/aboutus", (req, res) => {
   res.render("pages/aboutus");
 });
 
-// app.get("/contactus", (req, res) => {
-//   res.render("pages/contactus");
-// });
+app.get("/contactus", (req, res) => {
+  res.render("pages/contactus");
+});
 
 // app.get("/inner", (req, res) => {
 //   res.render("pages/inner1");
