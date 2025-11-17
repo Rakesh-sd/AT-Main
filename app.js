@@ -49,34 +49,34 @@ app.post("/api/register", async (req, res) => {
 });
 
 // ==== API ROUTE FOR CONTACT FORM ====
-// app.post("/api/contact", async (req, res) => {
-//   const { name, email, mobile, message } = req.body;
+app.post("/api/contact", async (req, res) => {
+  const { name, email, mobile, message } = req.body;
 
-//   try {
-//     const client = await auth.getClient();
-//     const sheets = google.sheets({ version: "v4", auth: client });
+  try {
+    const client = await auth.getClient();
+    const sheets = google.sheets({ version: "v4", auth: client });
 
-//     const currentTime = new Date().toLocaleString("en-IN", {
-//       timeZone: "Asia/Kolkata",
-//     });
+    const currentTime = new Date().toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+    });
 
-//     await sheets.spreadsheets.values.append({
-//       spreadsheetId,
-//       range: "Contact-Form!A:E",
-//       valueInputOption: "USER_ENTERED",
-//       resource: {
-//         values: [[currentTime, name, email, mobile, message]],
-//       },
-//     });
+    await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: "Contact-Form!A:E",
+      valueInputOption: "USER_ENTERED",
+      resource: {
+        values: [[currentTime, name, email, mobile, message]],
+      },
+    });
 
-//     res.json({ success: true, message: "Contact form saved to Google Sheet" });
-//   } catch (err) {
-//     console.error("Contact Form Error:", err);
-//     res
-//       .status(500)
-//       .json({ success: false, message: "Failed to save contact form" });
-//   }
-// });
+    res.json({ success: true, message: "Contact form saved to Google Sheet" });
+  } catch (err) {
+    console.error("Contact Form Error:", err);
+    res
+      .status(500)
+      .json({ success: false, message: "Failed to save contact form" });
+  }
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
