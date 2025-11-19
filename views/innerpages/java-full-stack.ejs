@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java Full Stack Development — Course Details</title>
+  <meta name="description"
+    content="Java Full Stack Development course — syllabus, projects, highlights, and enroll information" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
+  <link rel="stylesheet" href="../../stylesheets/inner.css">
+
+</head>
+
+<body>
+  <%- include('../components/navbar') %>
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="wrap">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-left">
+          <span class="badge">Top Rated • 4.9 ⭐</span>
+          <div class="course-title">
+            <div>
+              <h1>Java Full Stack Development</h1>
+              <div class="meta">120 hours • 14 Modules • Certificate • Real-world Projects</div>
+            </div>
+          </div>
+
+          <div class="tag-container">
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Hibernate</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+
+          <div class="hero-description">
+            Become a production-ready Java full-stack developer. Master Java fundamentals, Spring ecosystem,
+            RESTful APIs, frontend frameworks, databases, and deployment practices to build scalable web applications.
+          </div>
+        </div>
+
+        <aside class="hero-right card sticky">
+          <div class="card-info-row">
+            <div>
+              <div class="card-info-medium">Course fee</div>
+              <div class="price">₹10,999</div>
+            </div>
+            <div class="card-info-column">
+              <div class="card-info-small">Duration</div>
+              <div class="card-info-strong">120 hrs</div>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn btn-primary" id="enrollBtn">Enroll Now</button>
+            <button class="btn btn-ghost" id="brochureBtn">Download Brochure</button>
+          </div>
+          <hr class="separator" />
+          <div class="list">
+            <div class="row"><strong>Mode:</strong><span class="teacher-info">Online Live</span></div>
+            <div class="row"><strong>Certification:</strong><span class="teacher-info">Yes (On completion)</span></div>
+            <div class="row"><strong>Seats:</strong><span class="teacher-info">Limited</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Main Content -->
+      <main class="grid">
+        <div>
+          <!-- Section 1 -->
+          <section class="section primary item-hover">
+            <h2>What you'll learn</h2>
+            <p>
+              You’ll gain a deep understanding of Java programming, backend development with Spring Boot,
+              ORM with Hibernate, building reactive frontends with modern frameworks, data persistence, and cloud-ready
+              deployment.
+            </p>
+            <div class="tag-container">
+              <div class="topics-column">
+                <h3>Core topics</h3>
+                <ul>
+                  <li>Java SE: OOP, collections, concurrency</li>
+                  <li>Spring Boot & Microservices</li>
+                  <li>Hibernate & JPA</li>
+                  <li>RESTful API design</li>
+                  <li>Frontend: React or Angular basics</li>
+                </ul>
+              </div>
+
+              <div class="topics-column">
+                <h3>Hands-on</h3>
+                <ul>
+                  <li>Build CRUD applications with Spring Boot & Hibernate</li>
+                  <li>Create responsive frontends with React/Angular</li>
+                  <li>Authentication & authorization (JWT, OAuth)</li>
+                  <li>Containerization with Docker & basic CI/CD</li>
+                  <li>Capstone: Deploy a full-stack application to cloud</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 2 - Syllabus -->
+          <section class="section alt item-hover">
+            <h2>Course syllabus</h2>
+            <div class="accordion" id="syllabus">
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">01</div>
+                  <div>
+                    <div class="card-info-strong">Java Fundamentals</div>
+                    <div class="card-info-small">Syntax, OOP, Data types</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Primitive types, control flow, methods, classes, interfaces, OOP principles.
+              </div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">02</div>
+                  <div>
+                    <div class="card-info-strong">Collections & Generics</div>
+                    <div class="card-info-small">Lists, Sets, Maps, streams</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Collection framework, generics, Stream API, functional programming basics.
+              </div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">03</div>
+                  <div>
+                    <div class="card-info-strong">Exception Handling & I/O</div>
+                    <div class="card-info-small">Robust code practices</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Checked/unchecked exceptions, file I/O, serialization, logging.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">04</div>
+                  <div>
+                    <div class="card-info-strong">Concurrency & Multithreading</div>
+                    <div class="card-info-small">Threads, Executors, synchronization</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Thread lifecycle, synchronization, concurrent collections, CompletableFuture.
+              </div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">05</div>
+                  <div>
+                    <div class="card-info-strong">Databases & SQL</div>
+                    <div class="card-info-small">Design & queries</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Relational design, SQL queries, transactions, JDBC, connection pooling.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">06</div>
+                  <div>
+                    <div class="card-info-strong">Hibernate & JPA</div>
+                    <div class="card-info-small">ORM, mappings & performance</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Entity mapping, relationships, JPQL, caching, lazy vs eager loading.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">07</div>
+                  <div>
+                    <div class="card-info-strong">Spring Core & Spring Boot</div>
+                    <div class="card-info-small">Dependency injection & starters</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Beans, configurations, Spring Boot auto-configuration, profiles.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">08</div>
+                  <div>
+                    <div class="card-info-strong">REST APIs & Microservices</div>
+                    <div class="card-info-small">Design & patterns</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: REST principles, controllers, API versioning, microservice architecture,
+                service discovery basics.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">09</div>
+                  <div>
+                    <div class="card-info-strong">Security</div>
+                    <div class="card-info-small">Authentication & Authorization</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Spring Security, JWT, OAuth basics, secure coding practices.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">10</div>
+                  <div>
+                    <div class="card-info-strong">Frontend Development</div>
+                    <div class="card-info-small">React (or Angular) essentials</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Components, state management, REST integration, routing, build tooling.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">11</div>
+                  <div>
+                    <div class="card-info-strong">Testing & Quality</div>
+                    <div class="card-info-small">Unit & integration tests</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: JUnit, Mockito, Spring Test, frontend testing basics, code coverage.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">12</div>
+                  <div>
+                    <div class="card-info-strong">DevOps Essentials</div>
+                    <div class="card-info-small">Docker & CI/CD</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Dockerizing apps, basic CI pipelines, environment configs, deployment
+                patterns.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">13</div>
+                  <div>
+                    <div class="card-info-strong">Performance & Monitoring</div>
+                    <div class="card-info-small">Optimization & logs</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Profiling, caching strategies, application metrics, logging best practices.
+              </div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">14</div>
+                  <div>
+                    <div class="card-info-strong">Capstone Project</div>
+                    <div class="card-info-small">End-to-end full-stack app</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Build, test & deploy a complete full-stack application integrating backend,
+                frontend and CI/CD.</div>
+
+            </div>
+          </section>
+
+          <!-- Projects -->
+          <section class="section primary item-hover">
+            <h2>Projects & Capstone</h2>
+            <p>Practical projects to build your portfolio and demonstrate end-to-end system skills.</p>
+            <ol>
+              <li>User management system with Spring Boot & Hibernate</li>
+              <li>RESTful microservice for product catalog</li>
+              <li>Frontend SPA with React/Angular consuming APIs</li>
+              <li>Authentication service using JWT</li>
+              <li>Dockerized CI pipeline and cloud deployment</li>
+              <li>Capstone: E-commerce style full-stack application</li>
+            </ol>
+          </section>
+
+          <!-- Instructor -->
+          <section class="section alt item-hover">
+            <h2>Instructor</h2>
+            <div class="teacher">
+              <div class="avatar">RK</div>
+              <div>
+                <div class="teacher-info-strong">Rohit Kapoor</div>
+                <div class="teacher-info">Senior Java Architect — 11+ years experience</div>
+                <div class="teacher-info">Office hours: Mon & Thu • 7–8 PM</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section class="section primary item-hover">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+              <div class="q">Do I need prior programming experience?</div>
+              <div class="a">Basic programming knowledge helps, but we start from fundamentals and move to advanced
+                topics with guided support.</div>
+
+              <div class="q">Will I receive a certificate?</div>
+              <div class="a">Yes — certification is issued upon completion of course requirements and the capstone
+                project.</div>
+
+              <div class="q">Is this course suitable for placements?</div>
+              <div class="a">Yes — projects and interview preparation are aligned to industry hiring standards for Java
+                full-stack roles.</div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+          <div class="section alt card card-alt item-hover">
+            <h3>Why choose this course?</h3>
+            <p style="color:#49007F;">Comprehensive Java + modern frontend training with real projects, mentorship, and
+              deployment experience.</p>
+            <ul>
+              <li>Live sessions with recordings</li>
+              <li>Industry-relevant projects</li>
+              <li>Career guidance & mock interviews</li>
+            </ul>
+          </div>
+
+          <div class="section primary item-hover">
+            <h3>Batch Info</h3>
+            <div class="teacher-info" style="color:#fff;">
+              Weekday & weekend batches available.<br>Next batch starts: <strong>Dec 20, 2025</strong>
+            </div>
+          </div>
+
+          <div class="section alt item-hover">
+            <h3>Student Reviews</h3>
+            <div class="teacher-info">
+              <div class="teacher-info-strong">"Great hands-on course — helped me land a Java dev role"</div>
+              <div class="teacher-info-small">— Arjun, Software Engineer</div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+
+    <%- include('../components/footer') %>
+
+      <script>
+        // Accordion syllabus
+        document.querySelectorAll('#syllabus .item').forEach((it) => {
+          it.addEventListener('click', () => {
+            const next = it.nextElementSibling;
+            const open = it.getAttribute('data-open') === 'true';
+            document.querySelectorAll('#syllabus .content').forEach(c => c.style.display = 'none');
+            document.querySelectorAll('#syllabus .item').forEach(i => i.setAttribute('data-open', 'false'));
+            if (!open) { next.style.display = 'block'; it.setAttribute('data-open', 'true') }
+          })
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq .q').forEach(q => {
+          q.addEventListener('click', () => {
+            const ans = q.nextElementSibling;
+            const visible = ans.style.display === 'block';
+            ans.style.display = visible ? 'none' : 'block';
+          })
+        });
+
+        // Enroll & Brochure buttons
+        document.getElementById('enrollBtn').addEventListener('click', () => { alert('Enroll flow — replace with signup modal.'); })
+        document.getElementById('brochureBtn').addEventListener('click', () => {
+          const blob = new Blob([`Machine Learning — Course Brochure\n\nModules:\n1. Intro\n2. Supervised\n3. Trees\n4. Unsupervised\n5. Deployment\n`], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a'); a.href = url; a.download = 'ML-brochure.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+        });
+
+        // Keyboard accessibility
+        document.querySelectorAll('.accordion .item, .faq .q').forEach(el => {
+          el.setAttribute('tabindex', 0);
+          el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') el.click(); })
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section, .hero-left, .hero-right, .accordion .item, .faq .q').forEach(el => {
+          observer.observe(el);
+        });
+
+        // Parallax effect on hero and badges
+        window.addEventListener('scroll', () => {
+          const scrollTop = window.scrollY;
+          document.querySelectorAll('.hero-left, .hero-right').forEach(el => {
+            el.style.transform = `translateY(${scrollTop * 0.1}px)`;
+          });
+          document.querySelectorAll('.badge, .tag,').forEach(el => {
+            el.style.transform = `translateY(${scrollTop * 0.05}px)`;
+          });
+        });
+
+        // Background floating shapes
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let shapes = [];
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        for (let i = 0; i < 60; i++) { shapes.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 30 + 5, dx: (Math.random() - 0.5) * 0.5, dy: (Math.random() - 0.5) * 0.5 }); }
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          shapes.forEach(s => {
+            s.x += s.dx; s.y += s.dy;
+            if (s.x > canvas.width || s.x < 0) s.dx *= -1;
+            if (s.y > canvas.height || s.y < 0) s.dy *= -1;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+          });
+          requestAnimationFrame(animate);
+        }
+        animate();
+      </script>
+</body>
+
+</html>

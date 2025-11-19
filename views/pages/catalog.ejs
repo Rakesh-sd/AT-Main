@@ -66,47 +66,72 @@
             <script>
                 // ======= Demo Dataset =======
                 const CATEGORIES = [
+
                     // 🔹 CSE
                     { id: 1, name: 'Web Development', url: '/full-stack-web-development', color: '#6ea8fe', desc: 'Learn HTML, CSS, JavaScript, React, and backend frameworks to build dynamic and responsive web applications.', rating: 4.7, tag: 'CSE' },
-                    { id: 2, name: 'Machine Learning', url: '/machine-learning', color: '#3ddc97', desc: 'Master supervised and unsupervised learning using Python, scikit-learn, and data-driven techniques.', rating: 4.6, tag: 'CSE' },
-                    { id: 3, name: 'Artificial Intelligence', url: '/artificial-intelligence', color: '#ffd166', desc: 'Understand AI concepts including neural networks, deep learning, NLP, and intelligent automation.', rating: 4.3, tag: 'CSE' },
-                    { id: 4, name: 'Data Science', url: '/data-science', color: '#ff6b6b', desc: 'Learn data analysis, SQL, data visualization, and predictive modeling using Python and Power BI.', rating: 4.5, tag: 'CSE' },
-                    { id: 5, name: 'Cybersecurity', url: '/cyber-security', color: '#9b86ff', desc: 'Protect systems and data through ethical hacking, penetration testing, and digital forensics.', rating: 4.2, tag: 'CSE' },
-                    { id: 6, name: 'Azure Cloud Computing', url: '/azure-cloud', color: '#70e1ff', desc: 'Gain hands-on skills in Microsoft Azure, cloud deployment, DevOps, and virtualization.', rating: 4.1, tag: 'CSE' },
-                    { id: 7, name: 'Augmented & Virtual Reality', url: '/augmented-virtual-reality', color: '#7bdcb5', desc: 'Design immersive 3D experiences using Unity, C#, and AR/VR tools for real-world applications.', rating: 3.8, tag: 'CSE' },
-                    { id: 8, name: 'Android App Development', url: '/android-app', color: '#f78da7', desc: 'Develop native Android apps using Kotlin, Android Studio, and modern UI/UX practices.', rating: 3.9, tag: 'CSE' },
+                    { id: 2, name: 'Machine Learning', url: '/machine-learning', color: '#3ddc97', desc: 'Master supervised and unsupervised learning using Python and data-driven techniques.', rating: 4.6, tag: 'CSE' },
+                    { id: 3, name: 'Artificial Intelligence', url: '/artificial-intelligence', color: '#ffd166', desc: 'Understand neural networks, deep learning, NLP, and intelligent automation.', rating: 4.3, tag: 'CSE' },
+                    { id: 4, name: 'Data Science', url: '/data-science', color: '#ff6b6b', desc: 'Learn SQL, data visualization, machine learning, and predictive analytics.', rating: 4.5, tag: 'CSE' },
+                    { id: 5, name: 'Cybersecurity', url: '/cyber-security', color: '#9b86ff', desc: 'Learn ethical hacking, penetration testing, and digital forensics.', rating: 4.2, tag: 'CSE' },
+                    { id: 6, name: 'Azure Cloud Computing', url: '/azure-cloud', color: '#70e1ff', desc: 'Gain skills in Microsoft Azure, cloud deployment, and DevOps.', rating: 4.1, tag: 'CSE' },
+                    { id: 7, name: 'AR & VR', url: '/augmented-virtual-reality', color: '#7bdcb5', desc: 'Create immersive 3D experiences using Unity and AR/VR tools.', rating: 3.8, tag: 'CSE' },
+                    { id: 8, name: 'Android App Development', url: '/android-app', color: '#f78da7', desc: 'Develop apps using Kotlin, Jetpack, and modern Android tools.', rating: 3.9, tag: 'CSE' },
+                    { id: 9, name: 'Blockchain', url: '/blockchain', color: '#6ea8fe', desc: 'Understand blockchain fundamentals, smart contracts, and Web3.', rating: 4.4, tag: 'CSE' },
+                    { id: 10, name: 'Graphic Design', url: '/graphic-design', color: '#3ddc97', desc: 'Learn Photoshop, Illustrator, UI design, and branding essentials.', rating: 4.5, tag: 'CSE' },
+                    { id: 11, name: 'Java Full Stack', url: '/java-full-stack', color: '#ffd166', desc: 'Master Java, Spring Boot, Microservices, and frontend technologies.', rating: 4.6, tag: 'CSE' },
+                    { id: 12, name: 'Python FSD', url: '/python-full-stack', color: '#ff6b6b', desc: 'Learn Python, Django, REST APIs, and full-stack development.', rating: 4.5, tag: 'CSE' },
+                    { id: 13, name: 'Salesforce', url: '/sales-force', color: '#9b86ff', desc: 'Master Salesforce CRM, administration, and automation tools.', rating: 4.2, tag: 'CSE' },
+                    { id: 14, name: 'SAP', url: '/sap', color: '#70e1ff', desc: 'Learn SAP modules like MM, SD, FICO, and enterprise processes.', rating: 4.0, tag: 'CSE' },
+                    { id: 15, name: 'Selenium with Java', url: '/selenium-testing-with-java', color: '#7bdcb5', desc: 'Learn automation testing using Selenium WebDriver and Java.', rating: 4.1, tag: 'CSE' },
+                    { id: 16, name: 'ServiceNow (Admin)', url: '/system-admin', color: '#f78da7', desc: 'Learn ServiceNow workflows, ITSM, and system administration.', rating: 4.2, tag: 'CSE' },
+                    { id: 17, name: 'UI/UX', url: '/ui-ux', color: '#6ea8fe', desc: 'Learn user-centered design, prototyping, and Figma workflows.', rating: 4.6, tag: 'CSE' },
+                    { id: 18, name: 'Web3', url: '/web3', color: '#3ddc97', desc: 'Master decentralized apps, smart contracts, and blockchain tech.', rating: 4.4, tag: 'CSE' },
 
                     // 🔹 ECE
-                    { id: 9, name: 'Embedded Systems', url: '/embedded-system', color: '#a0c4ff', desc: 'Explore microcontrollers, IoT hardware, and embedded C programming for real-time systems.', rating: 3.5, tag: 'ECE' },
-                    { id: 10, name: 'Hybrid Electric Vehicle', url: '/hybrid-electric-vehicles', color: '#caffbf', desc: 'Learn EV design, hybrid powertrain systems, battery technology, and vehicle simulation.', rating: 4.8, tag: 'ECE' },
-                    { id: 11, name: 'Internet of Things', url: '/iot', color: '#ffd6a5', desc: 'Connect devices using IoT sensors, cloud platforms, and automation frameworks.', rating: 4.2, tag: 'ECE' },
-                    { id: 12, name: 'Robotics', url: '/robotics', color: '#bdb2ff', desc: 'Build and program robots using Arduino, ROS, and AI-driven automation technologies.', rating: 3.9, tag: 'ECE' },
+                    { id: 19, name: 'Embedded Systems', url: '/embedded-system', color: '#a0c4ff', desc: 'Learn microcontrollers, IoT hardware, and embedded C programming.', rating: 3.5, tag: 'ECE' },
+                    { id: 20, name: 'Hybrid Electric Vehicle', url: '/hybrid-electric-vehicles', color: '#caffbf', desc: 'Learn EV systems, battery tech, and hybrid vehicle engineering.', rating: 4.8, tag: 'ECE' },
+                    { id: 21, name: 'IoT', url: '/iot', color: '#ffd6a5', desc: 'Build IoT projects using sensors, cloud platforms, and automation.', rating: 4.2, tag: 'ECE' },
+                    { id: 22, name: 'Robotics', url: '/robotics', color: '#bdb2ff', desc: 'Learn robotics, Arduino, ROS, and automation systems.', rating: 3.9, tag: 'ECE' },
 
                     // 🔹 Mechanical
-                    { id: 13, name: 'Autocad', url: '/autocad', color: '#ffc6ff', desc: 'Design and draft engineering models using AutoCAD for mechanical and civil applications.', rating: 3.8, tag: 'Mechanical' },
-                    { id: 14, name: 'IC Engine', url: '/ic-engine', color: '#fdffb6', desc: 'Understand internal combustion engines, thermodynamics, and automotive design systems.', rating: 3.7, tag: 'Mechanical' },
-                    { id: 15, name: 'Car Design', url: '/car-design', color: '#bde0fe', desc: 'Learn automobile design principles, aerodynamics, and 3D modeling for automotive innovation.', rating: 3.5, tag: 'Mechanical' },
+                    { id: 23, name: 'AutoCAD', url: '/autocad', color: '#ffc6ff', desc: 'Design engineering drawings and models using AutoCAD.', rating: 3.8, tag: 'Mechanical' },
+                    { id: 24, name: 'IC Engine', url: '/ic-engine', color: '#fdffb6', desc: 'Study internal combustion engines and thermodynamics.', rating: 3.7, tag: 'Mechanical' },
+                    { id: 25, name: 'Car Design', url: '/car-design', color: '#bde0fe', desc: 'Learn automobile design, aerodynamics, and 3D modeling.', rating: 3.5, tag: 'Mechanical' },
+                    { id: 26, name: 'CATIA', url: '/catia', color: '#bde0fe', desc: 'Master CATIA for product design, surfaces, and mechanical modeling.', rating: 4.0, tag: 'Mechanical' },
+                    { id: 27, name: 'Supply Chain Management', url: '/supply-chain-management', color: '#bde0fe', desc: 'Study logistics, procurement, operations, and supply chain strategy.', rating: 4.3, tag: 'Mechanical' },
 
                     // 🔹 Management
-                    { id: 16, name: 'Digital Marketing', url: '/digital-marketing', color: '#ffa6c1', desc: 'Master SEO, social media, Google Ads, and content marketing to grow brands online.', rating: 3.5, tag: 'Management' },
-                    { id: 17, name: 'Human Resource', url: '/human-resource', color: '#6ea8fe', desc: 'Develop skills in recruitment, talent management, HR analytics, and employee relations.', rating: 4.7, tag: 'Management' },
-                    { id: 18, name: 'Business Analytics', url: '/business-analytics', color: '#3ddc97', desc: 'Analyze business data using Excel, SQL, and Power BI to drive strategic decisions.', rating: 4.6, tag: 'Management' },
-                    { id: 19, name: 'Stock Market', url: '/stock-market', color: '#ffd166', desc: 'Learn trading, technical analysis, and portfolio management for financial markets.', rating: 4.3, tag: 'Management' },
-                    { id: 20, name: 'Marketing & Management', url: '/marketing-management', color: '#ff6b6b', desc: 'Explore branding, market research, and business strategy for leadership success.', rating: 4.5, tag: 'Management' },
-                    { id: 21, name: 'Finance', url: '/finance', color: '#9b86ff', desc: 'Master financial modeling, accounting, budgeting, and investment management.', rating: 4.2, tag: 'Management' },
+                    { id: 28, name: 'Digital Marketing', url: '/digital-marketing', color: '#ffa6c1', desc: 'Learn SEO, Google Ads, SMM, and content marketing.', rating: 4.5, tag: 'Management' },
+                    { id: 29, name: 'Human Resource', url: '/human-resource', color: '#6ea8fe', desc: 'Learn recruitment, talent management, and HR analytics.', rating: 4.7, tag: 'Management' },
+                    { id: 30, name: 'Business Analytics', url: '/business-analytics', color: '#3ddc97', desc: 'Use Excel, SQL, Power BI, and analytics tools for decisions.', rating: 4.6, tag: 'Management' },
+                    { id: 31, name: 'Stock Market', url: '/stock-market', color: '#ffd166', desc: 'Learn trading, technical analysis, and portfolio management.', rating: 4.3, tag: 'Management' },
+                    { id: 32, name: 'Marketing & Management', url: '/marketing-management', color: '#ff6b6b', desc: 'Study branding, business strategy, and leadership skills.', rating: 4.5, tag: 'Management' },
+                    { id: 33, name: 'Finance', url: '/finance', color: '#9b86ff', desc: 'Learn financial modeling, investment, and budgeting.', rating: 4.2, tag: 'Management' },
 
                     // 🔹 Biotechnology
-                    { id: 22, name: 'Nano Technology', url: '/nano-technology', color: '#70e1ff', desc: 'Study nanomaterials, fabrication techniques, and their applications in science and medicine.', rating: 4.1, tag: 'Biotechnology' },
-                    { id: 23, name: 'Genetic Engineering', url: '/genetic-engineering', color: '#7bdcb5', desc: 'Understand DNA technology, CRISPR, and genetic modification for biotech innovation.', rating: 3.8, tag: 'Biotechnology' },
+                    { id: 34, name: 'Nano Technology', url: '/nano-technology', color: '#70e1ff', desc: 'Study nanomaterials and nano-fabrication methods.', rating: 4.1, tag: 'Biotechnology' },
+                    { id: 35, name: 'Genetic Engineering', url: '/genetic-engineering', color: '#7bdcb5', desc: 'Learn CRISPR, DNA tech, and genetic modification.', rating: 3.8, tag: 'Biotechnology' },
+                    { id: 36, name: 'Bioinformatics', url: '/bio-informatics', color: '#7bdcb5', desc: 'Learn computational biology, genomics, and biological data analysis.', rating: 4.3, tag: 'Biotechnology' },
+                    { id: 37, name: 'Microbiology', url: '/micro-biology', color: '#7bdcb5', desc: 'Study microorganisms and lab techniques.', rating: 3.9, tag: 'Biotechnology' },
+                    { id: 38, name: 'Molecular Biology', url: '/molecular-biology', color: '#7bdcb5', desc: 'Learn DNA replication, transcription, and gene regulation.', rating: 4.0, tag: 'Biotechnology' },
+                    { id: 39, name: 'Nutrition & Health Management', url: '/nutrition-health-managment', color: '#7bdcb5', desc: 'Learn nutrition science, wellness, and food safety.', rating: 4.2, tag: 'Biotechnology' },
+                    { id: 40, name: 'Sensory Science', url: '/sensory-science', color: '#7bdcb5', desc: 'Study food sensory evaluation and analysis.', rating: 4.1, tag: 'Biotechnology' },
 
                     // 🔹 Pharmacy
-                    { id: 24, name: 'Medical Coding', url: '/medical-coding', color: '#f78da7', desc: 'Learn healthcare coding systems like ICD, CPT, and HCPCS to ensure accurate medical billing and documentation.', rating: 3.9, tag: 'Pharmacy' },
-                    { id: 25, name: 'Pharmacovigilance', url: '/pharmacovigilance', color: '#a0c4ff', desc: 'Understand drug safety, adverse event reporting, and regulatory compliance in pharma.', rating: 3.5, tag: 'Pharmacy' },
-                    { id: 26, name: 'Clinical SAS', url: '/clinical-sas', color: '#caffbf', desc: 'Use SAS for clinical data analysis, reporting, and pharmaceutical research compliance.', rating: 4.8, tag: 'Pharmacy' },
+                    { id: 41, name: 'Medical Coding', url: '/medical-coding', color: '#f78da7', desc: 'Learn ICD, CPT coding, and healthcare documentation.', rating: 3.9, tag: 'Pharmacy' },
+                    { id: 42, name: 'Pharmacovigilance', url: '/pharmacovigilance', color: '#a0c4ff', desc: 'Learn drug safety, regulatory systems, and reporting.', rating: 3.5, tag: 'Pharmacy' },
+                    { id: 43, name: 'Clinical SAS', url: '/clinical-sas', color: '#caffbf', desc: 'Learn SAS for clinical trial data analysis.', rating: 4.8, tag: 'Pharmacy' },
+
+                    // 🔹 Commerce
+                    { id: 44, name: 'ACCA F4', url: '/acca-f4', color: '#ffd6a5', desc: 'Learn corporate law, business law, and ACCA fundamentals.', rating: 4.6, tag: 'Commerce' },
+
+                    // 🔹 Food & Agriculture
+                    { id: 45, name: 'Food Tech', url: '/food-tech', color: '#fdffb6', desc: 'Study food processing, safety, and product development.', rating: 4.4, tag: 'Food-Tech' },
                 ];
 
 
-                const TAGS = ['All', 'CSE', 'ECE', 'Mechanical', 'Management', 'Biotechnology', 'Pharmacy'];
+
+                const TAGS = ['All', 'CSE', 'ECE', 'Mechanical', 'Management', 'Biotechnology', 'Pharmacy', 'Commerce', 'Food-Tech'];
 
                 // ======= State & Elements =======
                 const grid = document.getElementById('grid');

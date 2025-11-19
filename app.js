@@ -168,6 +168,46 @@ app.get("/android-app", (req, res) => {
   res.render("./innerpages/android-app.ejs");
 });
 
+app.get("/blockchain", (req, res) => {
+  res.render("./innerpages/blockchain.ejs");
+});
+
+app.get("/graphic-design", (req, res) => {
+  res.render("./innerpages/graphic-design.ejs");
+});
+
+app.get("/java-full-stack", (req, res) => {
+  res.render("./innerpages/java-full-stack.ejs");
+});
+
+app.get("/python-full-stack", (req, res) => {
+  res.render("./innerpages/python.ejs");
+});
+
+app.get("/sales-force", (req, res) => {
+  res.render("./innerpages/sales-force.ejs");
+});
+
+app.get("/sap", (req, res) => {
+  res.render("./innerpages/sap.ejs");
+});
+
+app.get("/selenium-testing-with-java", (req, res) => {
+  res.render("./innerpages/selenium.ejs");
+});
+
+app.get("/system-admin", (req, res) => {
+  res.render("./innerpages/system-admin.ejs");
+});
+
+app.get("/ui-ux", (req, res) => {
+  res.render("./innerpages/uiux.ejs");
+});
+
+app.get("/web3", (req, res) => {
+  res.render("./innerpages/web3.ejs");
+});
+
 // ECE
 
 app.get("/iot", (req, res) => {
@@ -191,11 +231,21 @@ app.get("/hybrid-electric-Vehicles", (req, res) => {
 app.get("/autocad", (req, res) => {
   res.render("./innerpages/autocad.ejs");
 });
+
 app.get("/ic-engine", (req, res) => {
   res.render("./innerpages/ic-engine.ejs");
 });
+
 app.get("/car-design", (req, res) => {
   res.render("./innerpages/car-design.ejs");
+});
+
+app.get("/catia", (req, res) => {
+  res.render("./innerpages/catia.ejs");
+});
+
+app.get("/supply-chain-management", (req, res) => {
+  res.render("./innerpages/supply-chain.ejs");
 });
 
 // Management
@@ -229,8 +279,29 @@ app.get("/finance", (req, res) => {
 app.get("/nano-technology", (req, res) => {
   res.render("./innerpages/nano.ejs");
 });
+
 app.get("/genetic-engineering", (req, res) => {
   res.render("./innerpages/genetic.ejs");
+});
+
+app.get("/bio-informatics", (req, res) => {
+  res.render("./innerpages/bio-infromatics.ejs");
+});
+
+app.get("/micro-biology", (req, res) => {
+  res.render("./innerpages/micro-biology.ejs");
+});
+
+app.get("/molecular-biology", (req, res) => {
+  res.render("./innerpages/molecular-biology.ejs");
+});
+
+app.get("/nutrition-health-managment", (req, res) => {
+  res.render("./innerpages/nutrition.ejs");
+});
+
+app.get("/sensory-science", (req, res) => {
+  res.render("./innerpages/sensory.ejs");
 });
 
 // Pharmacy
@@ -238,12 +309,29 @@ app.get("/genetic-engineering", (req, res) => {
 app.get("/medical-coding", (req, res) => {
   res.render("./innerpages/medical-coding.ejs");
 });
+
 app.get("/pharmacovigilance", (req, res) => {
   res.render("./innerpages/pharmacovigilance.ejs");
 });
+
 app.get("/clinical-sas", (req, res) => {
   res.render("./innerpages/clinical-sas.ejs");
 });
+
+// Commerce
+
+app.get("/acca-f4", (req, res) => {
+  res.render("./innerpages/acca.ejs");
+});
+
+// Food & Agriculture
+
+app.get("/food-tech", (req, res) => {
+  res.render("./innerpages/food-tech.ejs");
+});
+
+
+
 
 // error handling
 app.use(function (req, res, next) {

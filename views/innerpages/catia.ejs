@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CATIA V5 — Course Details</title>
+  <meta name="description"
+    content="CATIA V5 course — syllabus, projects, highlights, and enroll information" />
+  <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-w-a.png">
+  <link rel="stylesheet" href="../../stylesheets/inner.css">
+
+</head>
+
+<body>
+  <%- include('../components/navbar') %>
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="wrap">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-left">
+          <span class="badge">Top Rated • 4.8 ⭐</span>
+          <div class="course-title">
+            <div>
+              <h1>CATIA V5 Design Course</h1>
+              <div class="meta">55 hours • 9 Modules • Certificate • Live Projects</div>
+            </div>
+          </div>
+
+          <div class="tag-container">
+            <div class="tags">
+              <span class="tag">CAD</span>
+              <span class="tag">3D Modeling</span>
+              <span class="tag">Product Design</span>
+              <span class="tag">Mechanical Engineering</span>
+            </div>
+          </div>
+
+          <div class="hero-description">
+            Master CATIA V5 from fundamentals to advanced 3D modeling. Learn part design, assembly modeling, surface
+            modeling, drafting, and real-world product development workflows used in mechanical, aerospace, and
+            automotive industries.
+          </div>
+        </div>
+
+        <aside class="hero-right card sticky">
+          <div class="card-info-row">
+            <div>
+              <div class="card-info-medium">Course fee</div>
+              <div class="price">₹7,499</div>
+            </div>
+            <div class="card-info-column">
+              <div class="card-info-small">Duration</div>
+              <div class="card-info-strong">55 hrs</div>
+            </div>
+          </div>
+          <div class="cta">
+            <button class="btn btn-primary" id="enrollBtn">Enroll Now</button>
+            <button class="btn btn-ghost" id="brochureBtn">Download Brochure</button>
+          </div>
+          <hr class="separator" />
+          <div class="list">
+            <div class="row"><strong>Mode:</strong><span class="teacher-info">Online Live</span></div>
+            <div class="row"><strong>Certification:</strong><span class="teacher-info">Yes (On completion)</span></div>
+            <div class="row"><strong>Seats:</strong><span class="teacher-info">Limited</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Main Content -->
+      <main class="grid">
+        <div>
+          <!-- Section 1 -->
+          <section class="section primary item-hover">
+            <h2>What you'll learn</h2>
+            <p>
+              Develop strong skills in 3D design using CATIA V5. Learn how to create complex models, assemblies,
+              surfaces,
+              sheet metal parts, and technical drawings — following real industry workflows.
+            </p>
+            <div class="tag-container">
+              <div class="topics-column">
+                <h3>Core topics</h3>
+                <ul>
+                  <li>CATIA V5 Interface & Workbenches</li>
+                  <li>Part Design (3D Modeling)</li>
+                  <li>Assembly Design</li>
+                  <li>Generative Shape / Surface Design</li>
+                  <li>Drafting & Technical Documentation</li>
+                </ul>
+              </div>
+
+              <div class="topics-column">
+                <h3>Hands-on</h3>
+                <ul>
+                  <li>3D modeling of mechanical components</li>
+                  <li>Full product assembly projects</li>
+                  <li>Complex surface modeling tasks</li>
+                  <li>Sheet metal part creation</li>
+                  <li>Capstone: Complete mechanical product design</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 2 - Syllabus -->
+          <section class="section alt item-hover">
+            <h2>Course syllabus</h2>
+            <div class="accordion" id="syllabus">
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">01</div>
+                  <div>
+                    <div class="card-info-strong">CATIA Introduction</div>
+                    <div class="card-info-small">Interface & Workbenches</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Sketcher, constraints, file management, 3D navigation.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">02</div>
+                  <div>
+                    <div class="card-info-strong">Sketcher Workbench</div>
+                    <div class="card-info-small">2D Geometry & Constraints</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Geometrical sets, relations, parametric sketches.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">03</div>
+                  <div>
+                    <div class="card-info-strong">Part Design</div>
+                    <div class="card-info-small">3D Solid Modeling</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Pads, pockets, shafts, ribs, fillets, patterns.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">04</div>
+                  <div>
+                    <div class="card-info-strong">Assembly Design</div>
+                    <div class="card-info-small">Product Structure Engineering</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Constraints, designing in context, BOM generation.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">05</div>
+                  <div>
+                    <div class="card-info-strong">Surface Modeling</div>
+                    <div class="card-info-small">Generative Shape Design</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Sweeps, lofts, blends, advanced surfacing techniques.</div>
+
+              <div class="item">
+                <div class="left">
+                  <div class="module-num">06</div>
+                  <div>
+                    <div class="card-info-strong">Drafting</div>
+                    <div class="card-info-small">2D Drawing & Annotation</div>
+                  </div>
+                </div>
+                <div>+</div>
+              </div>
+              <div class="content">Topics: Views, dimensions, GD&T basics, title block creation.</div>
+
+            </div>
+          </section>
+
+          <!-- Projects -->
+          <section class="section primary item-hover">
+            <h2>Projects & Capstone</h2>
+            <p>Build real mechanical design models and assemblies to add to your engineering portfolio.</p>
+            <ol>
+              <li>3D modeling of mechanical parts</li>
+              <li>Design & assembly of a gearbox</li>
+              <li>Surface modeling of an automotive component</li>
+              <li>Sheet metal bracket design</li>
+              <li>Technical drawing creation for manufacturing</li>
+              <li>Capstone: Complete product design from concept to drafting</li>
+            </ol>
+          </section>
+
+          <!-- Instructor -->
+          <section class="section alt item-hover">
+            <h2>Instructor</h2>
+            <div class="teacher">
+              <div class="avatar">AK</div>
+              <div>
+                <div class="teacher-info-strong">Arun Kumar</div>
+                <div class="teacher-info">Design Engineer — 8+ years in CAD & Product Design</div>
+                <div class="teacher-info">Office hours: Wed & Sat 6–7 PM</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section class="section primary item-hover">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+              <div class="q">Do I need engineering background?</div>
+              <div class="a">Basic mechanical knowledge is helpful but not mandatory.</div>
+
+              <div class="q">Will I receive certification?</div>
+              <div class="a">Yes — you'll receive a certificate after completing the course.</div>
+
+              <div class="q">Are design projects included?</div>
+              <div class="a">Yes — several hands-on projects and a capstone project are included.</div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+          <div class="section alt card card-alt item-hover">
+            <h3>Why choose this course?</h3>
+            <p style="color:#49007F;">Learn CATIA V5 with hands-on design work, live mentoring, and real mechanical
+              projects.</p>
+            <ul>
+              <li>Live classes + recordings</li>
+              <li>Industry project experience</li>
+              <li>Placement help & certification</li>
+            </ul>
+          </div>
+
+          <div class="section primary item-hover">
+            <h3>Batch Info</h3>
+            <div class="teacher-info" style="color:#fff;">
+              Weekday & weekend batches available.<br>Next batch starts: <strong>Dec 28, 2025</strong>
+            </div>
+          </div>
+
+          <div class="section alt item-hover">
+            <h3>Student Reviews</h3>
+            <div class="teacher-info">
+              <div class="teacher-info-strong">"Helped me master CATIA with real engineering projects"</div>
+              <div class="teacher-info-small">— Ritesh, Mechanical Engineer</div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+
+    <%- include('../components/footer') %>
+
+      <script>
+        // Accordion syllabus
+        document.querySelectorAll('#syllabus .item').forEach((it) => {
+          it.addEventListener('click', () => {
+            const next = it.nextElementSibling;
+            const open = it.getAttribute('data-open') === 'true';
+            document.querySelectorAll('#syllabus .content').forEach(c => c.style.display = 'none');
+            document.querySelectorAll('#syllabus .item').forEach(i => i.setAttribute('data-open', 'false'));
+            if (!open) { next.style.display = 'block'; it.setAttribute('data-open', 'true') }
+          })
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq .q').forEach(q => {
+          q.addEventListener('click', () => {
+            const ans = q.nextElementSibling;
+            const visible = ans.style.display === 'block';
+            ans.style.display = visible ? 'none' : 'block';
+          })
+        });
+
+        // Enroll & Brochure buttons
+        document.getElementById('enrollBtn').addEventListener('click', () => { alert('Enroll flow — replace with signup modal.'); })
+        document.getElementById('brochureBtn').addEventListener('click', () => {
+          const blob = new Blob([`Machine Learning — Course Brochure\n\nModules:\n1. Intro\n2. Supervised\n3. Trees\n4. Unsupervised\n5. Deployment\n`], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a'); a.href = url; a.download = 'ML-brochure.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+        });
+
+        // Keyboard accessibility
+        document.querySelectorAll('.accordion .item, .faq .q').forEach(el => {
+          el.setAttribute('tabindex', 0);
+          el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') el.click(); })
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section, .hero-left, .hero-right, .accordion .item, .faq .q').forEach(el => {
+          observer.observe(el);
+        });
+
+        // Parallax effect on hero and badges
+        window.addEventListener('scroll', () => {
+          const scrollTop = window.scrollY;
+          document.querySelectorAll('.hero-left, .hero-right').forEach(el => {
+            el.style.transform = `translateY(${scrollTop * 0.1}px)`;
+          });
+          document.querySelectorAll('.badge, .tag,').forEach(el => {
+            el.style.transform = `translateY(${scrollTop * 0.05}px)`;
+          });
+        });
+
+        // Background floating shapes
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let shapes = [];
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        for (let i = 0; i < 60; i++) { shapes.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 30 + 5, dx: (Math.random() - 0.5) * 0.5, dy: (Math.random() - 0.5) * 0.5 }); }
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          shapes.forEach(s => {
+            s.x += s.dx; s.y += s.dy;
+            if (s.x > canvas.width || s.x < 0) s.dx *= -1;
+            if (s.y > canvas.height || s.y < 0) s.dy *= -1;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+          });
+          requestAnimationFrame(animate);
+        }
+        animate();
+      </script>
+</body>
+
+</html>
