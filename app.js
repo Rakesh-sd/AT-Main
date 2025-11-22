@@ -128,6 +128,10 @@ app.get("/refund-policy", (req, res) => {
   res.render("pages/refund");
 });
 
+app.get("/faq", (req, res) => {
+  res.render("pages/faq");
+});
+
 // innerpages
 
 app.get("/course", (req, res) => {
